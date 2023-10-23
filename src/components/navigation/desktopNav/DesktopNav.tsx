@@ -61,7 +61,7 @@ export function DesktopNav() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Musik</NavigationMenuTrigger>
+            <NavigationMenuTrigger>{"Musik"}</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <li className="row-span-3">
@@ -77,32 +77,36 @@ export function DesktopNav() {
                         alt="Tiny Dancing Man Logo"
                       />
                       <div className="mb-2 mt-4 text-lg font-medium">
-                        Fællestival's musikere
+                        {"Fællestival's musikere"}
                       </div>
                       <p className="text-sm leading-tight text-muted-foreground">
-                        En lang række af frække kunstnere har besøgt Snævren
-                        gennem årene. Ta' en tur ned ad memory lane her.
+                        {
+                          "En lang række af frække kunstnere har besøgt Snævren gennem årene. Ta´ en tur ned ad memory lane her."
+                        }
                       </p>
                     </a>
                   </NavigationMenuLink>
                 </li>
                 <ListItem href="booking/" title="Booking 2024">
-                  Find bookingformular, SoMe info, baggear, tech specs og alt
-                  andet i skal bruge omking booking på Fællestival her.
+                  {
+                    "Find bookingformular, SoMe info, baggear, tech specs og alt andet i skal bruge omking booking her."
+                  }
                 </ListItem>
                 <ListItem href="program/" title="Program 2024">
-                  Her finder du programmet med spilletider for alle kunstnere på
-                  Fællestival 2024.
+                  {
+                    "Her finder du programmet med spilletider for alle kunstnere på Fællestival 2024."
+                  }
                 </ListItem>
                 <ListItem href="lineup/" title="Lineup 2024">
-                  Lineup af kunstnere med band channels, SoMe links, pics og
-                  andet frækt for Fællestival 2024.
+                  {
+                    "Lineup af kunstnere med band channels, SoMe links, pics og andet frækt for Fællestival 2024."
+                  }
                 </ListItem>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+            <NavigationMenuTrigger>{"Components"}</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                 {components.map((component) => (
@@ -120,7 +124,7 @@ export function DesktopNav() {
           <NavigationMenuItem>
             <Link href="/docs" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Documentation
+                {"Documentation"}
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
