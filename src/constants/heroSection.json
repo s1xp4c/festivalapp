@@ -1,0 +1,19 @@
+{
+  "images": [
+    {
+      "src": "/hero/1.jpg",
+      "title": "Fest og musik",
+      "subtext": "Kunst og håndværk"
+    },
+    {
+      "src": "/hero/2.jpg",
+      "title": "Teknik og kultur",
+      "subtext": "Upcoming kunstnere"
+    },
+    {
+      "src": "/hero/3.jpg",
+      "title": "Club og lounge",
+      "subtext": "Snazzy drinks og dansefest"
+    }
+  ]
+}
