@@ -23,10 +23,7 @@ function FullScreenPrompt({ onAccept, onDecline }: FullScreenPromptProps) {
                   }
                   className=""
                 >
-                  <span className="text-purple-500 ">
-                    {"  AI hjælpe-bot "}{" "}
-                  </span>{" "}
-                  .
+                  <span className="text-purple-500 ">AI hjælpe-bot.</span>
                 </Link>
                 Denne App er gladest i fuld skærm, men du kan altid vælge det
                 fra under indstillinger i øverste venstre hjørne hvis du syns

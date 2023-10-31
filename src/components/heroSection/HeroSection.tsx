@@ -27,7 +27,7 @@ const HeroSection = () => {
           quality={100}
           sizes="(max-width: 1024px)"
           style={{
-            borderRadius: "5px",
+            borderRadius: "15px",
             position: "absolute",
             margin: "auto",
             inset: "0",

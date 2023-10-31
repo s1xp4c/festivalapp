@@ -27,34 +27,36 @@ const MobileNav = () => {
   }, [pathname]);
 
   return (
-    <div className="sm:hidden w-full border-b-2 border-indigo-700/50 rounded-full pb-1">
-      <Sheet>
-        <div className="grid grid-cols-5 justify-between mx-2">
-          <div className="text-left mt-4 ml-2 col-span-1">
-            <SheetTrigger className="" onClick={toggleOpen}>
-              <IoSettingsSharp size={28} />
-            </SheetTrigger>
-          </div>
-          <div className="text-center col-span-3 p-2">
-            <Link href={"/"} className="mt-2 flex font-semibold">
-              <LogoFull />
-            </Link>
+    <div className="px-2">
+      <div className="sm:hidden w-full border-b-2 border-indigo-700 rounded-full">
+        <Sheet>
+          <div className="grid grid-cols-5 justify-between">
+            <div className="text-left mt-5 ml-3 col-span-1">
+              <SheetTrigger className="" onClick={toggleOpen}>
+                <IoSettingsSharp size={28} />
+              </SheetTrigger>
+            </div>
+            <div className="text-center col-span-3 p-2">
+              <Link href={"/"} className="mt-2 flex font-semibold">
+                <LogoFull />
+              </Link>
+            </div>
+
+            <div className="text-right mt-5 mr-3 col-span-1">
+              <SheetTrigger className="" onClick={toggleOpen}>
+                <FaBarsStaggered size={28} />
+              </SheetTrigger>
+            </div>
           </div>
 
-          <div className="text-right mt-5 mr-2 col-span-1">
-            <SheetTrigger className="" onClick={toggleOpen}>
-              <FaBarsStaggered size={28} />
-            </SheetTrigger>
-          </div>
-        </div>
-
-        <SheetContent>
-          <SheetHeader>
-            <SheetTitle>Fuuuuuck</SheetTitle>
-            <SheetDescription>Smid FællesStuff her!</SheetDescription>
-          </SheetHeader>
-        </SheetContent>
-      </Sheet>
+          <SheetContent>
+            <SheetHeader>
+              <SheetTitle>Fuuuuuck</SheetTitle>
+              <SheetDescription>Smid FællesStuff her!</SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
+      </div>
     </div>
   );
 };
