@@ -1,16 +1,17 @@
 // non-relatives
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Rubik } from "next/font/google";
 
 // relatives
 import ":/styles/globals.css";
 import { cn } from ":/lib/utils";
-import ThemeProvider from "../components/providers/ThemeProvider";
+import ThemeProvider from ":/components/providers/ThemeProvider";
 import { DesktopNav } from ":/components/navigation/desktopNav/DesktopNav";
+import FooterMenu from ":/components/footer/footerMenu/FooterMenu";
 
-export const fontSans = FontSans({
+export const rubik = Rubik({
   subsets: ["latin"],
-  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -28,15 +29,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <body
         className={cn(
-          "flex items-center justify-center h-full bg-background font-sans antialiased",
-          fontSans.variable
+          "flex items-center justify-center w-full h-full bg-background font-sans antialiased",
+          rubik.className
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="fixed top-0 z-50">
-            <DesktopNav />
-          </div>
+          <DesktopNav />
           {children}
+          <FooterMenu />
         </ThemeProvider>
       </body>
     </html>

@@ -23,6 +23,7 @@
       "|/*": ["./public/*"],
       ":/app/*": ["./src/app/*"],
       ":/lib/*": ["./src/lib/*"],
+      ":/types/*": ["./src/types/*"],
       ":/styles/*": ["./src/styles/*"],
       ":/constants/*": ["./src/constants/*"],
       ":/components/*": ["./src/components/*"]

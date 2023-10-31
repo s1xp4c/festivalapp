@@ -14,6 +14,21 @@
       "src": "/hero/3.jpg",
       "title": "Club og lounge",
       "subtext": "Snazzy drinks og dansefest"
+    },
+    {
+      "src": "/hero/4.jpg",
+      "title": "Sikkerhed og omsorg",
+      "subtext": "Medics, medfællaz og kram"
+    },
+    {
+      "src": "/hero/5.jpg",
+      "title": "Lyskunst og design",
+      "subtext": "Laser og LED halløj"
+    },
+    {
+      "src": "/hero/6.jpg",
+      "title": "Boldspil og ballade",
+      "subtext": "Venskab og hygge"
     }
   ]
 }

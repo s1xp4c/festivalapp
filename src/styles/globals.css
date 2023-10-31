@@ -57,3 +57,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer base {
+  .font-outline-1 {
+    -webkit-text-stroke: 1px #4c51bf;
+  }
+  .font-outline-1-white {
+    -webkit-text-stroke: 1px #ebf4ff;
+  }
+}
+
+/* 
+className={cn( "",)} 
+*/

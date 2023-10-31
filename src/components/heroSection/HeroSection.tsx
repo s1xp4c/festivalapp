@@ -25,9 +25,11 @@ const HeroSection = () => {
           width={1024}
           height={384}
           quality={100}
-          sizes="(max-width: 1024px) 100vw"
+          sizes="(max-width: 1024px)"
           style={{
+            borderRadius: "5px",
             position: "absolute",
+            margin: "auto",
             inset: "0",
             opacity: currentImageIndex === index ? 1 : 0,
             transition: "opacity 1s",
@@ -38,25 +40,25 @@ const HeroSection = () => {
       {data.images.map((image, index) => (
         <motion.div
           key={index}
-          className="absolute inset-0 flex items-center justify-center align-middle"
+          className="absolute inset-0 flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: currentImageIndex === index ? 1 : 0 }}
-          transition={{ delay: 0.3, duration: 4 }}
+          transition={{ delay: 0.3, duration: 3 }}
         >
-          <div className="text-white text-center">
+          <div className="text-foreground text-center">
             <motion.h1
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3, duration: 4 }}
-              className="text-5xl font-bold"
+              transition={{ delay: 0.3, duration: 3 }}
+              className="sm:text-5xl text-3xl font-bold drop-shadow-xl drop-shadow-purple-800 font-outline-1"
             >
               {image.title}
             </motion.h1>
             <motion.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3, duration: 4 }}
-              className="mt-4 text-2xl"
+              transition={{ delay: 0.6, duration: 3 }}
+              className="mt-1 sm:mt-4 sm:text-2xl drop-shadow-xl drop-shadow-white font-outline-1-white"
             >
               {image.subtext}
             </motion.p>
