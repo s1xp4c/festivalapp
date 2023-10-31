@@ -35,7 +35,7 @@ export function DesktopNav() {
           <MobileNav />
         </nav>
       ) : (
-        <nav className="z-10 fixed top-0 sm:text-lg ">
+        <nav className="z-10 fixed top-0 sm:text-lg hidden sm:block">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
