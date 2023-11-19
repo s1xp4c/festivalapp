@@ -6,9 +6,16 @@ import { FaHouseFlag } from "react-icons/fa6";
 import TinyDancingMan from "|/logos/TinyDancingMan-color-favicon.png";
 import { motion } from "framer-motion";
 import { cn } from ":/lib/utils";
+import Link from "next/link";
 
 function BottomMenu() {
-  const icons = [FaShoppingCart, FaInfo, BsFillChatFill, FaGuitar, FaHouseFlag];
+  const icons: { Icon: React.ElementType; href: string }[] = [
+    { Icon: FaShoppingCart, href: "/kurv" },
+    { Icon: FaInfo, href: "/info" },
+    { Icon: BsFillChatFill, href: "/chat" },
+    { Icon: FaGuitar, href: "/musik" },
+    { Icon: FaHouseFlag, href: "/butik" },
+  ];
   return (
     <motion.div
       className="w-full flex items-center p-4 pb-0 shadow-md justify-between bottom-0.5 absolute"
@@ -16,7 +23,7 @@ function BottomMenu() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2 }}
     >
-      {icons.map((Icon, index) => (
+      {icons.map(({ Icon, href }, index) => (
         <motion.div
           key={index}
           initial={{ y: 20, opacity: 0 }}
@@ -26,20 +33,28 @@ function BottomMenu() {
         >
           {Icon === BsFillChatFill ? (
             <>
-              <BsFillChatFill
-                size={38}
-                className={cn("transform -scale-x-100 m-4")}
-              />
-              <Image
-                src={TinyDancingMan}
-                width={26}
-                height={26}
-                alt="Fællestival Tiny Dancing Man Logo"
-                className="z-10 ml-1 mt-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-              />
+              <Link href={href}>
+                <div className="cursor-pointer">
+                  <BsFillChatFill
+                    size={38}
+                    className={cn("transform -scale-x-100 m-4")}
+                  />
+                  <Image
+                    src={TinyDancingMan}
+                    width={26}
+                    height={26}
+                    alt="Fællestival Tiny Dancing Man Logo"
+                    className="z-10 ml-1 mt-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  />
+                </div>
+              </Link>
             </>
           ) : (
-            <Icon size={25} className={cn("m-3")} />
+            <Link href={href}>
+              <div className="cursor-pointer">
+                <Icon size={25} className={cn("m-3")} />
+              </div>
+            </Link>
           )}
         </motion.div>
       ))}
