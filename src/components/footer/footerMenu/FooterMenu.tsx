@@ -28,32 +28,28 @@ function BottomMenu() {
           key={index}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: index * 0.1 }}
+          transition={{ delay: index * 0.3 }}
           className="border-t-2 rounded-full border-indigo-700"
         >
           {Icon === BsFillChatFill ? (
             <>
               <Link href={href}>
-                <div className="cursor-pointer">
-                  <BsFillChatFill
-                    size={38}
-                    className={cn("transform -scale-x-100 m-4")}
-                  />
-                  <Image
-                    src={TinyDancingMan}
-                    width={26}
-                    height={26}
-                    alt="Fællestival Tiny Dancing Man Logo"
-                    className="z-10 ml-1 mt-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                  />
-                </div>
+                <BsFillChatFill
+                  size={38}
+                  className={cn("transform -scale-x-100 m-4")}
+                />
+                <Image
+                  src={TinyDancingMan}
+                  width={26}
+                  height={26}
+                  alt="Fællestival Tiny Dancing Man Logo"
+                  className="z-10 ml-1 mt-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                />
               </Link>
             </>
           ) : (
             <Link href={href}>
-              <div className="cursor-pointer">
-                <Icon size={25} className={cn("m-3")} />
-              </div>
+              <Icon size={25} className={cn("m-3")} />
             </Link>
           )}
         </motion.div>
