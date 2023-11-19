@@ -1,21 +1,14 @@
 "use client";
 import Image from "next/image";
 import { BsFillChatFill } from "react-icons/bs";
-import { AiOutlineShoppingCart } from "react-icons/ai/";
-import { FaInfo, FaHouseFlag, FaGuitar } from "react-icons/fa6";
-import TinyDancingMan from "|/logos/TinyDancingMan-black.png";
+import { FaShoppingCart, FaInfo, FaGuitar } from "react-icons/fa";
+import { FaHouseFlag } from "react-icons/fa6";
+import TinyDancingMan from "|/logos/TinyDancingMan-color-favicon.png";
 import { motion } from "framer-motion";
 import { cn } from ":/lib/utils";
 
 function BottomMenu() {
-  const icons = [
-    AiOutlineShoppingCart,
-    FaInfo,
-    BsFillChatFill,
-    FaGuitar,
-    FaHouseFlag,
-  ];
-
+  const icons = [FaShoppingCart, FaInfo, BsFillChatFill, FaGuitar, FaHouseFlag];
   return (
     <motion.div
       className="w-full flex items-center p-4 pb-0 shadow-md justify-between bottom-0.5 absolute"
