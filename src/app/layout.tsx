@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <body
         className={cn(
-          "flex items-center justify-center w-full h-full bg-background font-sans antialiased",
+          "flex items-center justify-center w-full h-full bg-background font-sans antialiased z-0",
           rubik.className
         )}
       >

@@ -26,18 +26,18 @@ export function ThemeToggle() {
 
   const TriggerIcon = () => {
     if (theme === "system")
-      return <FaAdjust className="h-6 w-6 transition-all" />;
-    if (theme === "light") return <FaSun className="h-6 w-6 transition-all" />;
-    if (theme === "dark") return <FaMoon className="h-6 w-6 transition-all" />;
+      return <FaAdjust className="h-4 w-4 transition-all" />;
+    if (theme === "light") return <FaSun className="h-4 w-4 transition-all" />;
+    if (theme === "dark") return <FaMoon className="h-4 w-4 transition-all" />;
     // Default case, should not happen since theme is initialized
-    return <FaAdjust className="h-6 w-6 transition-all" />;
+    return <FaAdjust className="h-4 w-4 transition-all" />;
   };
 
   if (!mounted) return null;
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger className="-mt-2 -ml-3" asChild>
         <Button variant="ghost" size={"icon"}>
           <TriggerIcon />
           <span className="sr-only">Skift farvetema</span>
@@ -51,21 +51,21 @@ export function ThemeToggle() {
           onClick={() => setTheme("system")}
           className={`flex items-center ${getIconOpacity("system")}`}
         >
-          <FaAdjust className="h-4 w-4 transition-all mr-2" />
+          <FaAdjust className="h-3 w-3 transition-all mr-2" />
           Systemsat
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("light")}
           className={`flex items-center ${getIconOpacity("light")}`}
         >
-          <FaSun className="h-4 w-4 transition-all mr-2" />
+          <FaSun className="h-3 w-3 transition-all mr-2" />
           Lyst Tema
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("dark")}
           className={`flex items-center ${getIconOpacity("dark")}`}
         >
-          <FaMoon className="h-4 w-4 transition-all mr-2" />
+          <FaMoon className="h-3 w-3 transition-all mr-2" />
           Mørkt Tema
         </DropdownMenuItem>
       </DropdownMenuContent>

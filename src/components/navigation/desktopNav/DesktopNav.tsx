@@ -18,7 +18,7 @@ import Image from "next/image";
 import { ThemeToggle } from ":/components/themeToggle/ThemeToggle";
 
 import navigationData from ":/constants/Navigation.json";
-import MobileNav from "../mobileNav/MobileNav";
+import MobileNav from ":/components/navigation/mobileNav/MobileNav";
 import { useEffect, useState } from "react";
 
 export function DesktopNav() {
@@ -31,11 +31,11 @@ export function DesktopNav() {
   return (
     <>
       {useMobile ? (
-        <nav className="z-10 fixed top-0 w-full ">
+        <nav className="z-50 fixed top-0 w-full sm-hidden block">
           <MobileNav />
         </nav>
       ) : (
-        <nav className="z-10 fixed top-0 sm:text-lg hidden sm:block">
+        <nav className="z-50 fixed top-0 sm:text-lg hidden sm:block">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>

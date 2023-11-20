@@ -44,8 +44,8 @@ const MobileNav = () => {
               </SettingsSheetTrigger>
             </div>
             <SettingsSheetContent side="left">
-              <SettingsSheetTitle className="text-center mt-12">
-                App Indstillinger
+              <SettingsSheetTitle className="text-center mt-8">
+                App Indstillingsgøgl
               </SettingsSheetTitle>
               <SettingsNav />
             </SettingsSheetContent>
