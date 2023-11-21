@@ -1,5 +1,5 @@
 "use client";
-import { FaBarsStaggered } from "react-icons/fa6";
+import { FaUserNinja } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
 
 import {
@@ -59,7 +59,7 @@ const MobileNav = () => {
           <Sheet>
             <div className="text-right mt-5 mr-3 col-span-1">
               <SheetTrigger className="user-menu" onClick={toggleOpen}>
-                <FaBarsStaggered size={26} />
+                <FaUserNinja size={26} />
               </SheetTrigger>
             </div>
 
