@@ -18,7 +18,7 @@ function BottomMenu() {
   ];
   return (
     <motion.div
-      className="w-full flex items-center p-4 pb-0 shadow-md justify-between bottom-0.5 absolute"
+      className="w-full flex items-center p-4 pb-1 shadow-md justify-between bottom-0.5 absolute"
       initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2 }}
@@ -29,27 +29,27 @@ function BottomMenu() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: index * 0.3 }}
-          className="border-t-2 rounded-full border-indigo-700"
+          className="border-t-[.1rem] rounded-full border-indigo-700"
         >
           {Icon === BsFillChatFill ? (
             <>
               <Link href={href}>
                 <BsFillChatFill
-                  size={38}
-                  className={cn("transform -scale-x-100 m-4")}
+                  size={34}
+                  className={cn("transform -scale-x-100 m-2")}
                 />
                 <Image
                   src={TinyDancingMan}
-                  width={26}
-                  height={26}
+                  width={20}
+                  height={20}
                   alt="Fællestival Tiny Dancing Man Logo"
-                  className="z-10 ml-1 mt-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  className="z-10 ml-[.15rem] mt-[0.32rem] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                 />
               </Link>
             </>
           ) : (
             <Link href={href}>
-              <Icon size={25} className={cn("m-3")} />
+              <Icon size={22} className={cn("m-2")} />
             </Link>
           )}
         </motion.div>

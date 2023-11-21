@@ -1,7 +1,7 @@
 // non-relatives
 
 // relatives
-import FullScreen from ":/components/fullScreen/FullScreen";
+// import FullScreen from ":/components/fullScreen/FullScreen";
 import HeroSection from ":/components/heroSection/HeroSection";
 import MaxWidthWrapper from ":/components/ui/MaxWidthWrapper";
 

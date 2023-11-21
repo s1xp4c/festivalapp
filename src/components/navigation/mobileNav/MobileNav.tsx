@@ -34,13 +34,13 @@ const MobileNav = () => {
   }, [pathname]);
 
   return (
-    <div className="px-2">
-      <div className="sm:hidden w-full border-b-2 border-indigo-700 rounded-full">
+    <div className="pb-2 px-2 ">
+      <div className="bg-background/50 sm:hidden w-full border-b-[.1rem] border-indigo-700 rounded-[15px]">
         <div className="grid grid-cols-5 justify-between">
           <SettingsSheet>
             <div className="text-left mt-5 ml-3 col-span-1">
               <SettingsSheetTrigger>
-                <IoSettings size={28} />
+                <IoSettings size={26} />
               </SettingsSheetTrigger>
             </div>
             <SettingsSheetContent side="left">
@@ -59,7 +59,7 @@ const MobileNav = () => {
           <Sheet>
             <div className="text-right mt-5 mr-3 col-span-1">
               <SheetTrigger className="user-menu" onClick={toggleOpen}>
-                <FaBarsStaggered size={28} />
+                <FaBarsStaggered size={26} />
               </SheetTrigger>
             </div>
 

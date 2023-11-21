@@ -17,8 +17,8 @@
     },
     {
       "src": "/hero/4.jpg",
-      "title": "Sikkerhed og omsorg",
-      "subtext": "Medics, medfællaz og kram"
+      "title": "Sikkerhed og kram",
+      "subtext": "Medics, medfællaz og omsorg"
     },
     {
       "src": "/hero/5.jpg",
@@ -27,7 +27,7 @@
     },
     {
       "src": "/hero/6.jpg",
-      "title": "Boldspil og ballade",
+      "title": "Spil og leg",
       "subtext": "Venskab og hygge"
     }
   ]

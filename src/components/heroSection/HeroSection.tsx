@@ -16,52 +16,57 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative h-96 w-full overflow-hidden">
+    <div className="relative h-48 w-full overflow-hidden z-0 mt-3">
       {data.images.map((image, index) => (
-        <Image
+        <div
           key={index}
-          src={image.src}
-          alt={`Image ${index + 1}`}
-          width={1024}
-          height={384}
-          quality={100}
-          sizes="(max-width: 1024px)"
+          className="absolute inset-0"
           style={{
-            borderRadius: "15px",
-            position: "absolute",
-            margin: "auto",
-            inset: "0",
             opacity: currentImageIndex === index ? 1 : 0,
             transition: "opacity 1s",
           }}
-        />
+        >
+          <Image
+            src={image.src}
+            alt={`Image ${index + 1}`}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center 10%"
+            quality={100}
+            sizes="(max-width: 1024px)"
+            style={{
+              borderRadius: "10px",
+            }}
+          />
+        </div>
       ))}
 
       {data.images.map((image, index) => (
         <motion.div
           key={index}
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex justify-center"
+          style={{ paddingTop: "15%" }} // Text 20% from the top
           initial={{ opacity: 0 }}
           animate={{ opacity: currentImageIndex === index ? 1 : 0 }}
-          transition={{ delay: 0.3, duration: 3 }}
+          transition={{ delay: 0.2, duration: 2 }}
         >
           <div className="text-foreground text-center">
             <motion.h1
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3, duration: 3 }}
-              className="sm:text-5xl text-3xl font-bold drop-shadow-xl drop-shadow-purple-800 font-outline-1"
+              transition={{ delay: 0.2, duration: 2 }}
+              className="sm:text-5xl text-[1.2rem] font-bold drop-shadow-xl drop-shadow-purple-800 text-indigo-700/80 font-outline-2"
             >
               {image.title}
             </motion.h1>
-            <motion.p
+            {/* <motion.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.6, duration: 3 }}
-              className="mt-1 sm:mt-4 sm:text-2xl drop-shadow-xl drop-shadow-white font-outline-1-white"
+              transition={{ delay: 0.2, duration: 2 }}
+              className="mt-1 sm:mt-4 text-[.8rem] sm:text-2xl drop-shadow-xl drop-shadow-white text-purple-800 font-outline-2"
             >
               {image.subtext}
-            </motion.p>
+            </motion.p> */}
           </div>
         </motion.div>
       ))}

@@ -60,10 +60,10 @@
 
 @layer base {
   .font-outline-1 {
-    -webkit-text-stroke: 1px #4c51bf;
+    -webkit-text-stroke: 0.5px #4c51bf;
   }
-  .font-outline-1-white {
-    -webkit-text-stroke: 1px #ebf4ff;
+  .font-outline-2 {
+    -webkit-text-stroke: 0.8px #ebf4ff;
   }
 }
 
