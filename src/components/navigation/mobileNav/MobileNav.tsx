@@ -38,9 +38,12 @@ const MobileNav = () => {
       <div className="bg-background/50 sm:hidden w-full border-b-[.1rem] border-indigo-700 rounded-[15px]">
         <div className="grid grid-cols-5 justify-between">
           <SettingsSheet>
-            <div className="text-left mt-5 ml-3 col-span-1">
+            <div className="text-left mt-4 ml-2 col-span-1 ">
               <SettingsSheetTrigger>
-                <IoSettings size={26} />
+                <IoSettings
+                  size={24}
+                  color={"gradient-to-b indigo-700/80 to foreground"}
+                />
               </SettingsSheetTrigger>
             </div>
             <SettingsSheetContent side="left">
@@ -50,16 +53,16 @@ const MobileNav = () => {
               <SettingsNav />
             </SettingsSheetContent>
           </SettingsSheet>
-          <div className="text-center col-span-3 p-2">
-            <Link href={"/"} className="mt-2 flex font-semibold">
+          <div className="text-center col-span-3 mx-auto my-auto mt-[.85rem]">
+            <Link href={"/"} className="">
               <LogoFull />
             </Link>
           </div>
 
           <Sheet>
-            <div className="text-right mt-5 mr-3 col-span-1">
+            <div className="text-right mt-4 mr-2 col-span-1">
               <SheetTrigger className="user-menu" onClick={toggleOpen}>
-                <FaUserNinja size={26} />
+                <FaUserNinja size={24} />
               </SheetTrigger>
             </div>
 

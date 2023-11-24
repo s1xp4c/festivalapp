@@ -35,7 +35,7 @@ function BottomMenu() {
             <>
               <Link href={href}>
                 <BsFillChatFill
-                  size={34}
+                  size={30}
                   className={cn("transform -scale-x-100 m-2")}
                 />
                 <Image
@@ -49,7 +49,7 @@ function BottomMenu() {
             </>
           ) : (
             <Link href={href}>
-              <Icon size={22} className={cn("m-2")} />
+              <Icon size={20} className={cn("m-2")} />
             </Link>
           )}
         </motion.div>
