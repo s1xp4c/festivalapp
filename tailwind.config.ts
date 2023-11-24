@@ -69,6 +69,12 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+
+        flip: "flip 1s cubic-bezier(0.2, 0.0, 0.2, 1) ease-in",
+      },
+      boxShadow: {
+        glowPurple: "0 0 1px #6574cd, 0 0 2px #6574cd, 0 0 3px #6574cd",
+        glowWhite: "0 0 1px #6574cd, 0 0 2px #6574cd, 0 0 3px  #6574cd",
       },
     },
   },

@@ -66,6 +66,28 @@
     -webkit-text-stroke: 0.8px #ebf4ff;
   }
 }
+@layer base {
+  .glow-purple {
+    box-shadow: 0 0 2px #6574cd, 0 0 4px #6574cd, 0 0 6px #6574cd; /* Adjust the color to match your theme */
+  }
+  .glow-white {
+    box-shadow: 0 0 10px #ebf4ff, 0 0 20px #ebf4ff, 0 0 30px #ebf4ff; /* Adjust the color to match your theme */
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+.flip-animation {
+  animation: flip 1s cubic-bezier(0.4, 0, 0.2, 1) ease-in forwards;
+  transform-origin: center center;
+}
 
 /* 
 className={cn( "",)} 

@@ -1,3 +1,4 @@
+// use-client.tsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -11,6 +12,7 @@ import {
   addDays,
   getYear,
   setDay,
+  isAfter,
 } from "date-fns";
 import { zonedTimeToUtc, utcToZonedTime } from "date-fns-tz";
 
@@ -25,37 +27,91 @@ interface CountdownValues {
 interface CountdownTileProps {
   value: number;
   unit: string;
+  animate: boolean;
+  isFirst: boolean;
+  isLast: boolean;
 }
 
-const CountdownTile: React.FC<CountdownTileProps> = ({ value, unit }) => (
-  <div className="flex flex-col items-center justify-center flex-1">
-    <AnimatePresence mode="wait">
-      <motion.span
-        key={value}
-        className="bg-gradient-to-r from-indigo-600/30 to-indigo-800/30 shadow rounded-lg px-2 py-1"
-        initial={{ scale: 0.85 }}
-        animate={{ scale: 1 }}
-        exit={{ scale: 0.85 }}
-        transition={{ duration: 0.5 }}
+const countdownUnits: Array<keyof CountdownValues> = [
+  "weeks",
+  "days",
+  "hours",
+  "minutes",
+  "seconds",
+];
+
+const unitTranslations: { [unit: string]: string } = {
+  Weeks: "Uger",
+  Days: "Dage",
+  Hours: "Timer",
+  Minutes: "Minutter",
+  Seconds: "Sekunder",
+};
+
+const CountdownTile: React.FC<CountdownTileProps> = ({
+  value,
+  unit,
+  animate,
+  isFirst,
+  isLast,
+}) => {
+  // Conditional classes for the first and last tile
+
+  const borderRadiusClass = isFirst
+    ? "rounded-l-xl"
+    : isLast
+    ? "rounded-r-xl"
+    : "rounded-r-sm";
+  return (
+    <div className="flex flex-col items-center justify-center flex-1 mx-[.15rem] w-full">
+      <div
+        className={`flex flex-row gap-[1rem] items-center justify-between w-full h-3 bg-indigo-600/30 rounded-sm border border-indigo-700/80 ${borderRadiusClass}`}
       >
-        <span className="font-bold text-[0.65rem] text-foreground">
-          {value.toString().padStart(2, "0")}
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={value}
+            className={`items-center ml-1`}
+            initial={{ y: -4 }}
+            animate={animate ? { rotateY: 360 } : { rotateX: -360 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="font-bold text-[0.40rem] text-foreground/60 text-center justify-center">
+              {value.toString().padStart(1, "0")}
+            </span>
+          </motion.span>
+        </AnimatePresence>
+
+        <span className="text-[0.30rem] text-foreground/50 uppercase w-full">
+          {unitTranslations[unit]}
         </span>
-      </motion.span>
-    </AnimatePresence>
-    <span className="text-[0.65rem] text-foreground uppercase">{unit}</span>
-  </div>
-);
+      </div>
+    </div>
+  );
+};
 
 const getTargetDate = (timeZone: string) => {
   const now = new Date();
   const currentYear = getYear(now);
   const currentWeekNumber = getISOWeek(now);
-  const targetYear = currentWeekNumber > 29 ? currentYear + 1 : currentYear;
-  let firstDayOfTargetYear = startOfWeek(new Date(targetYear, 0, 1));
-  let targetDate = setDay(addDays(firstDayOfTargetYear, (29 - 1) * 7), 4); // Thursday
-  targetDate = setHours(targetDate, 12); // 12:00 PM
-  targetDate = setMinutes(targetDate, 0); // 00 Minutes
+  let targetYear =
+    currentWeekNumber > 29 ||
+    (currentWeekNumber === 29 &&
+      isAfter(
+        now,
+        setMinutes(
+          setHours(setDay(startOfWeek(new Date(currentYear, 0, 1)), 4), 12),
+          0
+        )
+      ))
+      ? currentYear + 1
+      : currentYear;
+  let targetDate = setMinutes(
+    setHours(
+      setDay(addDays(startOfWeek(new Date(targetYear, 0, 1)), (29 - 1) * 7), 4),
+      12
+    ),
+    0
+  );
   const utcDate = zonedTimeToUtc(targetDate, timeZone);
   return utcToZonedTime(utcDate, timeZone);
 };
@@ -91,38 +147,23 @@ const Countdown: React.FC = () => {
 
         setCountdown({ weeks, days, hours, minutes, seconds });
       }
-    }, 1000); // Update every second
+    }, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <div className="bg-background/50 sm:hidden w-full border-t-[.1rem] border-indigo-700 rounded-[15px] -mt-5 z-50 flex justify-between p-1 items-center">
-      <CountdownTile
-        key={`week-${countdown.weeks}`}
-        value={countdown.weeks}
-        unit="Uger"
-      />
-      <CountdownTile
-        key={`day-${countdown.days}`}
-        value={countdown.days}
-        unit="Dage"
-      />
-      <CountdownTile
-        key={`hour-${countdown.hours}`}
-        value={countdown.hours}
-        unit="Timer"
-      />
-      <CountdownTile
-        key={`minute-${countdown.minutes}`}
-        value={countdown.minutes}
-        unit="Min."
-      />
-      <CountdownTile
-        key={`second-${countdown.seconds}`}
-        value={countdown.seconds}
-        unit="Sek."
-      />
+    <div className="bg-background/50 sm:hidden w-full border-t-[.1rem] border-indigo-700 rounded-[15px] -mt-5 z-50 flex justify-between p-1 items-center ">
+      {countdownUnits.map((unit, index, array) => (
+        <CountdownTile
+          key={unit}
+          value={countdown[unit]}
+          unit={unit.charAt(0).toUpperCase() + unit.slice(1)}
+          animate
+          isFirst={index === 0} // True if this is the first element
+          isLast={index === array.length - 1} // True if this is the last element
+        />
+      ))}
     </div>
   );
 };
