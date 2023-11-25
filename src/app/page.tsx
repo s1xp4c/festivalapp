@@ -3,7 +3,7 @@
 
 // relatives
 // import FullScreen from ":/components/fullScreen/FullScreen";
-import Pricing from ":/components/Pricing";
+import Pricing from ":/components/pricing/Pricing";
 import Countdown from ":/components/countdown/Countdown/Countdown";
 import HeroSection from ":/components/heroSection/HeroSection";
 import MaxWidthWrapper from ":/components/ui/MaxWidthWrapper";

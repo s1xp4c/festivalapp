@@ -11,8 +11,12 @@ const CallToActionButton: React.FC<AddToCartProps> = ({
   children,
 }) => {
   return (
-    <div className="relative mt-auto text-center inline-flex h-4 bg-gradient-to-br from-indigo-700/60 to-indigo-900/60">
-      <Button type="button" className="rounded-md w-full   " onClick={onClick}>
+    <div className="relative mt-auto text-center inline-flex w-full">
+      <Button
+        type="button"
+        className="rounded-md w-full bg-gradient-to-br from-indigo-700/60 to-indigo-900/60 border border-indigo-700"
+        onClick={onClick}
+      >
         {children}
       </Button>
       <span className="flex absolute h-2 w-2 top-0 right-0 -mt-1 -mr-1">

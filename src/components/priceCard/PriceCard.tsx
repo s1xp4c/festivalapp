@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
-import Button from ":/components/buttons/Button";
-import CallToActionButton from "../buttons/CallToActionButton";
+// import Button from ":/components/buttons/Button";
+import CallToActionButton from "../buttons/callToActionButton/CtaButtonWrapper";
 
 const checkIcon = (
   <path d="M1412 734q0-28-18-46l-91-90q-19-19-45-19t-45 19l-408 407-226-226q-19-19-45-19t-45 19l-91 90q-18 18-18 46 0 27 18 45l362 362q19 19 45 19 27 0 46-19l543-543q18-18 18-45zm252 162q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"></path>
@@ -37,11 +37,11 @@ const PriceCard: React.FunctionComponent<Props> = (props, { onClick }) => {
       >
         <div className="center p-0 w-full">
           <div className="text-center w-full ">
-            <span className="rounded-full flex mb-0 mt-0 text-sm mx-auto my-auto font-medium ">
+            <span className="rounded-full flex mb-0 mt-0 text-xs text-center justify-center font-medium ">
               {title}
             </span>
           </div>
-          <div className="mt-0 text-sm text-center font-extrabold text-indigo-600/80 w-full">
+          <div className="mt-0 text-sm text-center  font-extrabold text-indigo-600/80 w-full">
             {`${price}Kr.`}
           </div>
         </div>

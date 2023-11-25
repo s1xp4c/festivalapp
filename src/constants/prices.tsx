@@ -1,111 +1,64 @@
-export const crewPlan = {
-  id: "0",
-  title: "Crew Fælla",
-  price: 75,
-  conditions: {
-    alleDage: {
-      title: "Alle dage",
-      available: true,
+export interface Condition {
+  title: string;
+  available: boolean;
+}
+
+export interface PricingPlan {
+  id: string;
+  title: string;
+  price: number;
+  conditions: Condition[];
+}
+
+export const allTickets = {
+  title: "BILLETPRISER",
+  subtitle1: "Indgang til den årlige foreningsfest kræver medlemskab",
+  subtitle2: "Hvilken slags Fælla er du?",
+  plans: [
+    {
+      id: "0",
+      title: "Crew Fælla",
+      price: 75,
+      conditions: [
+        { title: "Alle dage", available: true },
+        { title: "Mad", available: true },
+        { title: "Parkering", available: false },
+        { title: "Rabat", available: false },
+      ],
     },
-    mad: {
-      title: "Mad",
-      available: true,
+    {
+      id: "1",
+      title: "Gæst Fælla",
+      price: 775,
+      conditions: [
+        { title: "Alle dage", available: true },
+        { title: "Mad", available: false },
+        { title: "Parkering", available: false },
+        { title: "Rabat", available: false },
+      ],
     },
-    parkering: {
-      title: "Parkering",
-      available: false,
+    {
+      id: "2",
+      title: "Helårs Fælla",
+      price: 775,
+      conditions: [
+        { title: "Alle dage", available: true },
+        { title: "Mad", available: false },
+        { title: "Parkering", available: true },
+        { title: "Rabat", available: true },
+      ],
     },
-    rabat: {
-      title: "Rabat",
-      available: false,
+    {
+      id: "3",
+      title: "Helårs Crew",
+      price: 775,
+      conditions: [
+        { title: "Alle dage", available: true },
+        { title: "Mad", available: true },
+        { title: "Parkering", available: true },
+        { title: "Rabat", available: true },
+      ],
     },
-  },
+  ],
 };
-
-export const gaestPlan = {
-  id: "1",
-  title: "Gæst Fælla",
-  price: 775,
-  conditions: {
-    alleDage: {
-      title: "Alle dage",
-      available: true,
-    },
-    mad: {
-      title: "Mad",
-      available: false,
-    },
-    parkering: {
-      title: "Parkering",
-      available: false,
-    },
-    rabat: {
-      title: "Rabat",
-      available: false,
-    },
-  },
-};
-
-export const helaarsFaellaPlan = {
-  id: "2",
-  title: "Helårs Fælla",
-  price: 775,
-  conditions: {
-    alleDage: {
-      title: "Alle dage",
-      available: true,
-    },
-    mad: {
-      title: "Mad",
-      available: false,
-    },
-    parkering: {
-      title: "Parkering",
-      available: false,
-    },
-    rabat: {
-      title: "Rabat",
-      available: true,
-    },
-    rabatProcent: {
-      title: "10%",
-      available: true,
-    },
-  },
-};
-
-export const helaarsCrewPlan = {
-  id: "3",
-  title: "Helårs Crew",
-  price: 775,
-  conditions: {
-    alleDage: {
-      title: "Alle dage",
-      available: true,
-    },
-    mad: {
-      title: "Mad",
-      available: true,
-    },
-    parkering: {
-      title: "Parkering",
-      available: true,
-    },
-    rabat: {
-      title: "Rabat",
-
-      available: true,
-    },
-    rabatProcent: {
-      title: "100%",
-      available: true,
-    },
-  },
-};
-
-export default [
-  crewPlan,
-  gaestPlan,
-  helaarsCrewPlan,
-  helaarsFaellaPlan,
-] as const;
+export default allTickets;

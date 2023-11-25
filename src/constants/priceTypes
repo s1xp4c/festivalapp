@@ -1,0 +1,17 @@
+{
+  "tickets": {
+    "title": "BILLETPRISER",
+    "description": "Indgang til den årlige foreningsfest kræver medlemskab",
+    "subDescription": "Hvilken slags Fælla er du?"
+  },
+  "memberships": {
+    "title": "MEDLEMSKABER",
+    "description": "Bliv en del af vores Fælla community",
+    "subDescription": "Vælg den Fælla type der passer dig"
+  },
+  "merchandice": {
+    "title": "MERCHANDICE",
+    "description": "Skal du haø din smækkern FÆLLA stil på?",
+    "subDescription": "Fang dit merch her og vælg om det skal sendes, eller du hapser det i Snævren"
+  }
+}
