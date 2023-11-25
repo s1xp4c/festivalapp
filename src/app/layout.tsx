@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang="en" suppressHydrationWarning={false}>
       <body
         className={cn(
           "flex items-center justify-center w-full h-full bg-background font-sans antialiased z-0",

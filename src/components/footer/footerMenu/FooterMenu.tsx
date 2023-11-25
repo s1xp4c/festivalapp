@@ -28,7 +28,7 @@ function BottomMenu() {
           key={index}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: index * 0.3 }}
+          transition={{ delay: index * 0.2 }}
           className="border-t-[.1rem] rounded-full border-indigo-700"
         >
           {Icon === BsFillChatFill ? (

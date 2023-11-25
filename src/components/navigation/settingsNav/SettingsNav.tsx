@@ -11,7 +11,7 @@ export function SettingsNav() {
         <ul className="grid gap-3 p-0 w-[92vw] grid-cols-[.70fr_1fr] bg-none">
           <div className={cn("row-span-3 bg-none")}>
             <div className="flex h-[85%] w-full select-none flex-col justify-start rounded-lg bg-gradient-to-b from-muted/20 to-muted p-2 no-underline outline-none focus:shadow-md">
-              <div className="flex mb-0 mt-0 text-md font-medium -ml-0">
+              <div className="flex mb-0 mt-0 text-md font-medium ml-[0.1rem]">
                 <ThemeToggle />
                 <p className="-mt-[.15rem] -ml-[.2rem]">{"Farvetema"}</p>
               </div>
