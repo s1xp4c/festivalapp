@@ -38,7 +38,7 @@ const HeaderInfo: React.FC<HeaderInfoProps> = ({
   return (
     <div className="grid grid-cols-[.70fr_1fr] gap-3 p-0 bg-none py-2">
       {/* Left side */}
-      <div className="flex h-full flex-col justify-start rounded-lg bg-gradient-to-b from-muted/0 to-indigo-500/20 p-2">
+      <div className="flex  flex-col justify-start rounded-lg bg-gradient-to-b from-muted/0 to-indigo-500/20 p-2">
         <div className="flex items-center flex-col justify-between">
           <div className="flex w-full">
             <IconComponent className="text-2xl text-left" />

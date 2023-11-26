@@ -44,7 +44,7 @@ const Pricing: React.FC<PriceProps> = ({ onClick }) => {
           <PriceCard
             onClick={() => onClick(plan)}
             key={plan.id}
-            classes={{ root: "flex flex-col h-full w-full p-2 " }}
+            classes={{ root: "flex flex-col  w-full p-2 " }}
             title={plan.title}
             features={Object.values(plan.conditions)}
             price={plan.price}
