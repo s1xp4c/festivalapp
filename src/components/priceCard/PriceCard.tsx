@@ -31,7 +31,7 @@ const PriceCard: React.FunctionComponent<Props> = (props, { onClick }) => {
     <div className="my-0">
       <div
         className={clsx(
-          "flex h-full w-full select-none flex-col justify-start rounded-lg bg-gradient-to-b from-muted/20 to-muted p-0 no-underline outline-none focus:shadow-md",
+          "flex h-full w-full select-none flex-col justify-start rounded-lg bg-gradient-to-b from-muted/0 to-indigo-500/20  p-0 no-underline outline-none focus:shadow-md",
           classes?.root
         )}
       >
@@ -42,7 +42,7 @@ const PriceCard: React.FunctionComponent<Props> = (props, { onClick }) => {
             </span>
           </div>
           <div className="mt-0 text-sm text-center  font-extrabold text-indigo-600/80 w-full">
-            {`${price}Kr.`}
+            {`${price} kr.`}
           </div>
         </div>
         {/* <p className="text-sm mt-1 text-orange">Billetten inkluderer:</p> */}

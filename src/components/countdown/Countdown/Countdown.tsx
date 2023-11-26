@@ -66,7 +66,7 @@ const CountdownTile: React.FC<CountdownTileProps> = ({
   return (
     <div className="flex flex-col items-center justify-center text-center w-full mx-[.12rem]">
       <div
-        className={`flex flex-row  items-center justify-center w-full h-3 bg-indigo-600/30 rounded-sm border border-indigo-700/80 ${borderRadiusClass}`}
+        className={`flex flex-row  items-center justify-center w-full h-3 bg-gradient-to-b from-muted/0 to-indigo-500/20 rounded-sm border border-indigo-700/80 ${borderRadiusClass}`}
       >
         <AnimatePresence mode="wait">
           <motion.span

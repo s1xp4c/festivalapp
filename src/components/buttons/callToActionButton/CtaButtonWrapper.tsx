@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Button";
+import Button from ":/components/buttons/button/Button";
 
 interface AddToCartProps {
   onClick: () => void;
@@ -14,7 +14,7 @@ const CallToActionButton: React.FC<AddToCartProps> = ({
     <div className="relative mt-auto text-center inline-flex w-full">
       <Button
         type="button"
-        className="rounded-md w-full bg-gradient-to-br from-indigo-700/60 to-indigo-900/60 border border-indigo-700"
+        className="rounded-md w-full bg-gradient-to-b from-muted/0 to-indigo-500/20 border border-indigo-700"
         onClick={onClick}
       >
         {children}

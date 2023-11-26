@@ -11,7 +11,7 @@ const Button: React.FunctionComponent<Props> = (props) => {
     <button
       {...rest}
       className={clsx(
-        "transition ease-in-out delay-150 text-sm font-bold rounded-md text-foreground bg-gradient-to-b from-indigo-500/30 to-indigo-900 focus:outline-none duration-300 hover:bg-indigo-600/60 flex items-center justify-center  py-[.025rem] px-2",
+        "transition ease-in-out delay-150 text-sm font-bold rounded-md text-foreground bg-gradient-to-b from-muted/0 to-indigo-500/20 focus:outline-none duration-300 hover:bg-indigo-600/60 flex items-center justify-center  py-[.025rem] px-2",
         rest.className
       )}
     >

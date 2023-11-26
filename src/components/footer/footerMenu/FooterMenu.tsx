@@ -18,7 +18,7 @@ function BottomMenu() {
   ];
   return (
     <motion.div
-      className="w-full flex items-center p-4 pb-1 shadow-md justify-between bottom-0.5 absolute"
+      className="w-full flex items-center z-50 p-4 pb-1 shadow-md justify-between bottom-0.5 absolute mt-auto"
       initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2 }}

@@ -35,7 +35,7 @@ const MobileNav = () => {
 
   return (
     <div className="pb-2 px-2 ">
-      <div className="bg-background/50 sm:hidden w-full border-b-[.1rem] border-indigo-700 rounded-[15px]">
+      <div className="bg-gradient-to-b from-muted/0 to-indigo-500/20 sm:hidden w-full border-b-[.1rem] border-indigo-700 rounded-[15px]">
         <div className="grid grid-cols-5 justify-between">
           <SettingsSheet>
             <div className="text-left mt-4 ml-2 col-span-1 ">
