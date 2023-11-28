@@ -16,11 +16,11 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative h-48 w-full overflow-hidden z-0 mt-3">
+    <div className="mb-1 h-[5vh] sm:h-[30vh] md:h-[40vh] w-full z-0 rounded-lg relative">
       {data.images.map((image, index) => (
         <div
           key={index}
-          className="absolute inset-0"
+          className="absolute "
           style={{
             opacity: currentImageIndex === index ? 1 : 0,
             transition: "opacity 1s",
@@ -29,13 +29,13 @@ const HeroSection = () => {
           <Image
             src={image.src}
             alt={`Image ${index + 1}`}
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center 10%"
             quality={100}
-            sizes="(max-width: 1024px)"
+            width={500}
+            height={500}
             style={{
-              borderRadius: "10px",
+              objectPosition: "center",
+              overflow: "hidden",
+              objectFit: "contain",
             }}
           />
         </div>

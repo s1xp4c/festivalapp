@@ -15,7 +15,7 @@ import {
   isAfter,
 } from "date-fns";
 import { zonedTimeToUtc, utcToZonedTime } from "date-fns-tz";
-import eventData from ":/constants/countdown.json";
+// import eventData from ":/constants/countdown.json";
 
 interface CountdownValues {
   weeks: number;
@@ -59,30 +59,30 @@ const CountdownTile: React.FC<CountdownTileProps> = ({
   // Conditional classes for the first and last tile
 
   const borderRadiusClass = isFirst
-    ? "rounded-l-xl  "
+    ? "rounded-l-md ml-1"
     : isLast
-    ? "rounded-r-xl "
+    ? "rounded-r-md mr-1"
     : "rounded-r-sm ";
   return (
-    <div className="flex flex-col items-center justify-center text-center w-full mx-[.12rem]">
+    <div className=" w-full text-right">
       <div
-        className={`flex flex-row  items-center justify-center w-full h-3 bg-gradient-to-b from-muted/0 to-indigo-500/20 rounded-sm border border-indigo-700/80 ${borderRadiusClass}`}
+        className={`flex flex-row items-center mx-[.1rem] h-auto bg-gradient-to-b from-muted/0 to-indigo-500/20 rounded-xs border border-indigo-700/80 ${borderRadiusClass}`}
       >
         <AnimatePresence mode="wait">
           <motion.span
             key={value}
-            className={`items-center ml-2`}
-            initial={{ y: -2.8 }}
+            className={``}
+            initial={{ y: -0 }}
             animate={animate ? { rotateY: 360 } : { rotateX: -360 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="font-bold text-[0.70rem] text-foreground/70  justify-center">
+            <span className="font-bold text-[0.60rem] ml-1 flex  text-foreground/70  ">
               {value.toString().padStart(1, "0")}
             </span>
           </motion.span>
         </AnimatePresence>
 
-        <span className="text-[0.70rem] text-foreground/80 uppercase w-full mb-[0.1rem]">
+        <span className="text-[0.6rem] text-foreground/80 mr-1 w-full mb-[0.1rem]">
           {unitTranslations[unit]}
         </span>
       </div>
@@ -154,7 +154,7 @@ const Countdown: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-background/50 sm:hidden w-full border-t-[.1rem] border-indigo-700 rounded-[15px] -mt-5 z-50 flex justify-between p-1 items-center -px-1">
+    <div className="bg-background/50 sm:hidden w-full border-b-[.1rem] border-indigo-700 rounded-0 z-50 flex justify-between pb-1 pt-1 items-center ">
       {countdownUnits.map((unit, index, array) => (
         <CountdownTile
           key={unit}

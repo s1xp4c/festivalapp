@@ -62,14 +62,14 @@ export const allTickets = {
       conditions: [
         { title: "Alle dage", available: true },
         { title: "MoKost", available: true },
-        { title: "AfMad", available: true },
+        { title: "AfMad", available: false },
         { title: "Parkering", available: false },
       ],
     },
     {
       id: "1",
       title: "Gæste Fælla",
-      price: 890,
+      price: 865,
       conditions: [
         { title: "Alle dage", available: true },
         { title: "MoKost", available: true },
@@ -84,14 +84,14 @@ export const allTickets = {
       conditions: [
         { title: "Alle dage", available: true },
         { title: "MoKost", available: true },
-        { title: "AfMad", available: true },
+        { title: "AfMad", available: false },
         { title: "Parkering", available: true },
       ],
     },
     {
       id: "3",
       title: "Dags Fælla",
-      price: 295,
+      price: 370,
       conditions: [
         { title: "Alle dage", available: false },
         { title: "MoKost", available: true },

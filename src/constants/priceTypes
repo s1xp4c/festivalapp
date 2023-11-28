@@ -15,3 +15,110 @@
     "subDescription": "Fang dit merch her og vælg om det skal sendes, eller du hapser det i Snævren"
   }
 }
+
+// Define an enum for team names
+enum TeamName {
+  BESTYRELSE
+  OKONOMI
+  BETABAR
+  WEB
+  ALTERNABAR
+  PR
+  BOBS
+  LOGISTIK
+  TEKNIK
+  KONFERENCIER
+  KOKKEN
+  BOOKING
+  MEDIC
+  BANDCARE
+  EXITCREW
+  CHECKIN
+  MOKKAMOK
+  RENOVATION
+  LAKKERBIXEN
+  BAGER
+  OPVASK
+  KREA
+  OPNEDMAD
+  CHILL
+}
+
+enum Role {
+  SUPERADMIN
+  ADMIN
+  RANGER
+  REGULAR_VOLUNTEER
+  TWO_HOUR_VOLUNTEER
+  MANAGER
+  ALL_USER
+}
+
+model User {
+  id            String          @id @default(uuid())
+  email         String          @unique
+  nickname      String
+  fullName      String
+  phoneNumber   String
+  countryCode   String
+  zipCode       String
+  avatarUrl     String?
+  wallet        Float           @default(0)
+  userRoles     UserRole[]
+  teams         Team[]
+  workSchedules WorkSchedule[]
+  createdAt     DateTime        @default(now())
+  lastLogin     DateTime?
+  membership    Membership
+  isAdmin       Boolean         @default(false)
+  isBlocked     Boolean         @default(false)
+  blockExpires  DateTime?
+}
+
+model UserRole {
+  id       String   @id @default(uuid())
+  userId   String
+  role     Role
+  user     User     @relation(fields: [userId], references: [id])
+}
+
+model Team {
+  id            String         @id @default(uuid())
+  name          TeamName
+  image         String?
+  budget        Float
+  contactInfo   ContactInfo?
+  rangerAdmins  User[]         @relation("rangerAdmins")
+  volunteers    User[]         @relation("volunteers")
+  volunteerCap  Int            @default(0)
+  workSchedules WorkSchedule[]
+}
+
+model ContactInfo {
+  id          String   @id @default(uuid())
+  phoneNumber String
+  email       String
+  avatarUrl   String?
+}
+
+model WorkSchedule {
+  id         String   @id @default(uuid())
+  userId     String
+  teamId     String
+  start      DateTime
+  end        DateTime
+  role       Role
+  user       User     @relation(fields: [userId], references: [id])
+  team       Team     @relation(fields: [teamId], references: [id])
+}
+
+model Membership {
+  id           String    @id @default(uuid())
+  type         String
+  monthlyFee   Float
+  annualFee    Float
+  description  String?
+  benefits     String[]
+  user         User?     @relation(fields: [userId], references: [id])
+  userId       String?
+}

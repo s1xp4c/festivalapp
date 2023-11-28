@@ -1,7 +1,7 @@
 // non-relatives
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
-
+import { Analytics } from "@vercel/analytics/react";
 // relatives
 import ":/styles/globals.css";
 import { cn } from ":/lib/utils";
@@ -29,13 +29,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={false}>
       <body
         className={cn(
-          "flex items-center justify-center w-full h-full bg-background font-sans antialiased z-0",
+          "w-full min-h-screen bg-background font-sans antialiased z-0",
           rubik.className
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <DesktopNav />
+          <div className="container mt-[4.5rem]"></div>
           {children}
+          <Analytics />
           <FooterMenu />
         </ThemeProvider>
       </body>

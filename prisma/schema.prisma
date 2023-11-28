@@ -1,0 +1,105 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            Int            @id @default(autoincrement())
+  name          String?  @db.VarChar(255)
+  email         String   @unique @db.VarChar(255)
+  username      String         @unique @db.VarChar(255) 
+  phoneNumber   Int            @unique
+  zipCode       Int     
+  posts         Post[]
+  profile       Profile?       
+  role          Role           @default(USER)       
+  status        StatusType     @default(ACTIVE)
+  blockExpires  DateTime?
+  member        Membership?    
+  events        Event[]        
+}
+
+model Profile {
+  id            Int            @id @default(autoincrement())
+  bio           String?
+  User   User    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  userId        Int            @unique
+  avatarUrl     String?
+  wallet        Float          @default(0)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  lastLogin     DateTime?
+
+}
+
+model Post {
+  id           Int             @id @default(autoincrement())
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  title        String
+  published    Boolean         @default(false)
+  author       User            @relation(fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  authorId     Int
+  categories   Category[]
+}
+
+model Category {
+  id           Int             @id @default(autoincrement())
+  name         String
+  posts        Post[]
+}
+
+model Membership {
+  id            String         @id @default(uuid())
+  member        User           @relation(fields: [memberID], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  memberID      Int            @unique
+  memberType    MemberType[]
+  isActive      Boolean        @default(true)
+  startedAt     DateTime       @default(now())
+  expiresAt     DateTime
+  FeeInterval   DateTime
+  tokenFee      Float
+}
+
+model Event {
+  id            String         @id @default(uuid())
+  title         String
+  subText       String?
+  href          String
+  tokenFee      Float
+  eventStart    DateTime
+  eventEnd      DateTime  
+  guest         User           @relation(fields: [guestId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  guestId       Int            @unique
+}
+
+enum StatusType {
+  ACTIVE
+  INACTIVE
+  BLOCKED
+}
+
+enum MemberType {
+  MEMBER
+  SUPPORT
+  CREW
+  ALLYEARCREW
+  ARTIST
+  NEIGHBOUR
+  FREEBEE
+}
+
+enum Role {
+  USER
+  CREW
+  MANAGER
+  COORDINATOR
+  HAND
+}
+
+
+
