@@ -12,6 +12,7 @@ import { cn } from ":/lib/utils";
 import ThemeProvider from ":/components/providers/ThemeProvider";
 import { DesktopNav } from ":/components/navigation/desktopNav/DesktopNav";
 import FooterMenu from ":/components/footer/footerMenu/FooterMenu";
+import Countdown from ":/components/countdown/Countdown/Countdown";
 
 export const rubik = Rubik({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <DesktopNav />
+          <Countdown />
           <div className=" mt-[4.5rem] mb-auto min-w-full">
             {children}
             <Analytics />
