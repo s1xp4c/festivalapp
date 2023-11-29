@@ -67,9 +67,9 @@ const MobileNav = () => {
             </div>
 
             <SheetContent>
-              <SheetHeader>
-                <SheetTitle>Fuuuuuck</SheetTitle>
-                <SheetDescription>Smid FællesStuff her!</SheetDescription>
+              <SheetHeader className="mt-10">
+                <SheetTitle>💜 Kom indenfor 💜</SheetTitle>
+                <SheetDescription></SheetDescription>
               </SheetHeader>
             </SheetContent>
           </Sheet>

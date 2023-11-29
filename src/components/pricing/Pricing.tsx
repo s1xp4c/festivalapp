@@ -25,21 +25,23 @@ const Pricing: React.FC<PriceProps> = ({ onClick }) => {
 
   return (
     <div
-      className={clsx("relative flex w-full flex-col text-center")}
+      className={clsx("flex max-h-full w-full flex-col text-center")}
       id="Pricing"
     >
-      <HeaderInfo
-        title={title}
-        subtitle1={subtitle1}
-        subtitle2={subtitle2}
-        ctaBtnInfo={headerCtaButtonInfo}
-        headerInfoLinks={headerInfoLinks}
-        headerInfoIcon={headerInfoIcon as React.ElementType}
-        onClick={function (): void {
-          throw new Error("Function not implemented.");
-        }}
-      />
-      <div className="grid grid-cols-4 gap-2.5 w-full">
+      <div className="mx-auto my-auto">
+        <HeaderInfo
+          title={title}
+          subtitle1={subtitle1}
+          subtitle2={subtitle2}
+          ctaBtnInfo={headerCtaButtonInfo}
+          headerInfoLinks={headerInfoLinks}
+          headerInfoIcon={headerInfoIcon as React.ElementType}
+          onClick={function (): void {
+            throw new Error("Function not implemented.");
+          }}
+        />
+      </div>
+      <div className="grid grid-cols-4 gap-2.5 w-full mx-auto my-auto">
         {plans.map((plan) => (
           <PriceCard
             onClick={() => onClick(plan)}

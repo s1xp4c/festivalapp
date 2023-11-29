@@ -2,6 +2,10 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+// import {
+//   RegisterLink,
+//   LoginLink,
+// } from "@kinde-oss/kinde-auth-nextjs/components";
 // relatives
 import ":/styles/globals.css";
 import { cn } from ":/lib/utils";
@@ -35,9 +39,10 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <DesktopNav />
-          <div className="container mt-[4.5rem]"></div>
-          {children}
-          <Analytics />
+          <div className=" mt-[4.5rem] mb-auto min-w-full">
+            {children}
+            <Analytics />
+          </div>
           <FooterMenu />
         </ThemeProvider>
       </body>
