@@ -21,6 +21,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import LogoFull from ":/components/logos/logoFull/LogoFull";
 import { SettingsNav } from ":/components/navigation/settingsNav/SettingsNav";
+import Countdown from ":/components/countdown/Countdown/Countdown";
 
 const MobileNav = () => {
   const [isOpen, setOpen] = useState<boolean>(false);
@@ -34,11 +35,11 @@ const MobileNav = () => {
   }, [pathname]);
 
   return (
-    <div className="">
-      <div className="bg-gradient-to-b from-muted/0 to-indigo-500/20 sm:hidden w-full border-b-[.1rem] border-indigo-700 ">
-        <div className="grid grid-cols-5 justify-between">
+    <div className="bg-background/80 mx-2 mt-2">
+      <div className="bg-gradient-to-b to-muted/0 from-indigo-500/20 sm:hidden w-full border-b-[.1rem] border-x-[.1rem] rounded-lg border-indigo-700 ">
+        <div className="grid grid-cols-5 justify-between py-2">
           <SettingsSheet>
-            <div className="text-left mt-4 ml-3 col-span-1 ">
+            <div className="text-left ml-3 col-span-1 ">
               <SettingsSheetTrigger>
                 <IoSettings
                   size={24}
@@ -53,14 +54,14 @@ const MobileNav = () => {
               <SettingsNav />
             </SettingsSheetContent>
           </SettingsSheet>
-          <div className="text-center col-span-3 mx-auto my-auto mt-[.85rem]">
+          <div className="text-center col-span-3 mx-auto my-auto ">
             <Link href={"/"} className="">
               <LogoFull />
             </Link>
           </div>
 
           <Sheet>
-            <div className="text-right mt-4 mr-3 col-span-1">
+            <div className="text-right  mr-3 col-span-1">
               <SheetTrigger className="user-menu" onClick={toggleOpen}>
                 <FaUserNinja size={24} />
               </SheetTrigger>
@@ -75,6 +76,7 @@ const MobileNav = () => {
           </Sheet>
         </div>
       </div>
+      <Countdown />
     </div>
   );
 };

@@ -2,11 +2,6 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-// import {
-//   RegisterLink,
-//   LoginLink,
-// } from "@kinde-oss/kinde-auth-nextjs/components";
-// relatives
 import ":/styles/globals.css";
 import { cn } from ":/lib/utils";
 import ThemeProvider from ":/components/providers/ThemeProvider";
@@ -34,18 +29,20 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={false}>
       <body
         className={cn(
-          "w-full min-h-screen bg-background font-sans antialiased z-0",
+          "w-full h-screen flex flex-col bg-background font-sans antialiased z-0",
           rubik.className
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <DesktopNav />
-          <Countdown />
-          <div className=" mt-[4.5rem] mb-auto min-w-full">
+          <div className=" mt-20 mb-auto min-w-full">
+            {/* <Countdown /> */}
             {children}
             <Analytics />
           </div>
-          <FooterMenu />
+          <div className="mt-auto sticky bottom-0.5 bg-bacground">
+            <FooterMenu />
+          </div>
         </ThemeProvider>
       </body>
     </html>

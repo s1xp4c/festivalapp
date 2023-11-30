@@ -59,10 +59,10 @@ const CountdownTile: React.FC<CountdownTileProps> = ({
   // Conditional classes for the first and last tile
 
   const borderRadiusClass = isFirst
-    ? "rounded-l-md ml-1"
+    ? "rounded-l-lg ml-0"
     : isLast
-    ? "rounded-r-md mr-1"
-    : "rounded-r-sm ";
+    ? "rounded-r-lg mr-0"
+    : "rounded-0 ";
   return (
     <div className=" w-full text-right">
       <div
@@ -154,7 +154,7 @@ const Countdown: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-background/50 sm:hidden w-full border-b-[.1rem] border-indigo-700 rounded-0 z-50 flex justify-between pb-1 pt-1 items-center ">
+    <div className="bg-background/50 sm:hidden w-full border-indigo-700 rounded-0 z-50 flex justify-between pb-1 pt-1 items-center ">
       {countdownUnits.map((unit, index, array) => (
         <CountdownTile
           key={unit}
