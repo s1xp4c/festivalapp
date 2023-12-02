@@ -4,7 +4,7 @@ import allInfo, {
   headerCtaButtonInfo,
 } from ":/constants/heroInfo";
 import clsx from "clsx";
-import HeaderInfo from ":/components/infos/infoHeader/InfoHeader";
+import InfoHeader from ":/components/infos/infoHeader/InfoHeader";
 import InfoCard from ":/components/infos/infoCard/InfoCard";
 
 interface InfoProps {
@@ -28,7 +28,7 @@ const Info: React.FC<InfoProps> = ({}) => {
       id="Pricing"
     >
       <div className="mx-auto my-auto flex">
-        <HeaderInfo
+        <InfoHeader
           title={title}
           subtitle1={subtitle1}
           subtitle2={subtitle2}

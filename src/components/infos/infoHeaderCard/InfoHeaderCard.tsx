@@ -1,8 +1,8 @@
-// HeaderInfoCard.tsx
+// InfoHeaderCard.tsx
 import React from "react";
 import Link from "next/link";
 
-interface HeaderInfoCardProps {
+interface InfoHeaderCardProps {
   title: string;
   href: string;
   subText: string;
@@ -11,7 +11,7 @@ interface HeaderInfoCardProps {
   year: string;
 }
 
-const HeaderInfoCard: React.FC<HeaderInfoCardProps> = ({
+const InfoHeaderCard: React.FC<InfoHeaderCardProps> = ({
   title,
   href,
   subText,
@@ -48,4 +48,4 @@ const HeaderInfoCard: React.FC<HeaderInfoCardProps> = ({
   );
 };
 
-export default HeaderInfoCard;
+export default InfoHeaderCard;

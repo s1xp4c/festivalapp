@@ -57,7 +57,7 @@ export const allInfos = {
     {
       id: "0",
       title: "Crew Fælla",
-      date: "10 / 11 - 2024",
+      date: "10/11/2024",
       featureHeader: "Some stuff",
       features: [
         { title: "Alle dage", available: true },
@@ -69,7 +69,7 @@ export const allInfos = {
     {
       id: "1",
       title: "Gæste Fælla",
-      date: "10 / 11 - 2024",
+      date: "10/11/2024",
       featureHeader: "Dingleberry",
       features: [
         { title: "Alle dage", available: true },
@@ -81,7 +81,7 @@ export const allInfos = {
     {
       id: "2",
       title: "Helårs Fælla",
-      date: "10 / 11 - 2024",
+      date: "10/11/2024",
       featureHeader: "Anger stuff",
       features: [
         { title: "Alle dage", available: true },
@@ -93,7 +93,7 @@ export const allInfos = {
     {
       id: "3",
       title: "Dags Fælla",
-      date: "10 / 11 - 2024",
+      date: "10/11/2024",
       featureHeader: "Some julepis",
       features: [
         { title: "Alle dage", available: false },

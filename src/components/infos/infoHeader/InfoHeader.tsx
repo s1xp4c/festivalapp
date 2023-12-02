@@ -1,5 +1,3 @@
-// HeaderInfo.tsx
-
 import React from "react";
 import InfoHeaderCard from ":/components/infos/infoHeaderCard/InfoHeaderCard";
 import CallToActionButton from "../../buttons/callToActionButton/CtaButtonWrapper";
@@ -27,7 +25,7 @@ export interface InfoHeaderProps {
   onClick: () => void;
 }
 
-const HeaderInfo: React.FC<InfoHeaderProps> = ({
+const InfoHeader: React.FC<InfoHeaderProps> = ({
   title,
   subtitle1,
   subtitle2,
@@ -36,7 +34,7 @@ const HeaderInfo: React.FC<InfoHeaderProps> = ({
   headerInfoIcon: IconComponent,
 }) => {
   return (
-    <div className="grid grid-cols-[.70fr_1fr] gap-3 p-0 bg-none py-2">
+    <div className="grid grid-cols-[1fr_.7fr] gap-3 p-0 bg-none py-2">
       {/* Left side */}
       <div className="flex  flex-col justify-start rounded-lg bg-gradient-to-b from-muted/0 to-indigo-500/20 p-2">
         <div className="flex items-center flex-col justify-between">
@@ -76,4 +74,4 @@ const HeaderInfo: React.FC<InfoHeaderProps> = ({
   );
 };
 
-export default HeaderInfo;
+export default InfoHeader;
