@@ -1,11 +1,11 @@
 // HeaderInfo.tsx
 
 import React from "react";
-import HeaderInfoCard from ":/components/headerInfoCard/HeaderInfoCard";
-import CallToActionButton from "../buttons/callToActionButton/CtaButtonWrapper";
+import InfoHeaderCard from ":/components/infos/infoHeaderCard/InfoHeaderCard";
+import CallToActionButton from "../../buttons/callToActionButton/CtaButtonWrapper";
 import Link from "next/link";
 
-export interface HeaderInfoProps {
+export interface InfoHeaderProps {
   title: string;
   subtitle1: string;
   subtitle2: string;
@@ -14,9 +14,9 @@ export interface HeaderInfoProps {
     title: string;
     href: string;
     subText: string;
-    rate: number;
-    currency: string;
-    interval: string;
+    date: string;
+    month: string;
+    year: string;
   }[];
   ctaBtnInfo: {
     id: string;
@@ -27,7 +27,7 @@ export interface HeaderInfoProps {
   onClick: () => void;
 }
 
-const HeaderInfo: React.FC<HeaderInfoProps> = ({
+const HeaderInfo: React.FC<InfoHeaderProps> = ({
   title,
   subtitle1,
   subtitle2,
@@ -61,14 +61,14 @@ const HeaderInfo: React.FC<HeaderInfoProps> = ({
       {/* Right side */}
       <div className="border-b-2 border-r-[.01rem] mt-1 border-r-indigo-500   rounded-lg p-2 h-full flex flex-col justify-evenly">
         {headerInfoLinks.map((link) => (
-          <HeaderInfoCard
+          <InfoHeaderCard
             key={link.id}
             title={link.title}
             subText={link.subText}
             href={link.href}
-            rate={link.rate}
-            currency={link.currency}
-            interval={link.interval}
+            date={link.date}
+            month={link.month}
+            year={link.year}
           />
         ))}
       </div>

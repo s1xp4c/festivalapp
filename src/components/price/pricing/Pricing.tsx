@@ -1,11 +1,11 @@
 import React from "react";
-import PriceCard from ":/components/priceCard/PriceCard";
+import PriceCard from ":/components/price/priceCard/PriceCard";
 import allTickets, {
   priceHeaderInfo,
   headerCtaButtonInfo,
 } from ":/constants/prices";
 import clsx from "clsx";
-import HeaderInfo from ":/components/headerInfo/HeaderInfo";
+import PriceHeader from ":/components/price/priceHeader/PriceHeader";
 
 interface PriceProps {
   onClick: (plan: PricingPlanTypes) => void;
@@ -29,7 +29,7 @@ const Pricing: React.FC<PriceProps> = ({ onClick }) => {
       id="Pricing"
     >
       <div className="mx-auto my-auto">
-        <HeaderInfo
+        <PriceHeader
           title={title}
           subtitle1={subtitle1}
           subtitle2={subtitle2}

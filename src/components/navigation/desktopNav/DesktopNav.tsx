@@ -20,7 +20,6 @@ import { ThemeToggle } from ":/components/themeToggle/ThemeToggle";
 import navigationData from ":/constants/Navigation.json";
 import MobileNav from ":/components/navigation/mobileNav/MobileNav";
 import { useEffect, useState } from "react";
-// import Countdown from ":/components/countdown/Countdown/Countdown";
 
 export function DesktopNav() {
   const [useMobile, setUseMobile] = useState(false);
@@ -34,7 +33,6 @@ export function DesktopNav() {
       {useMobile ? (
         <nav className="z-50 fixed top-0 w-full sm-hidden block">
           <MobileNav />
-          {/* <Countdown /> */}
         </nav>
       ) : (
         <nav className="z-50 fixed top-0 sm:text-lg hidden sm:block">

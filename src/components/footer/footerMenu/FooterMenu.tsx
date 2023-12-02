@@ -18,7 +18,7 @@ function BottomMenu() {
   ];
   return (
     <motion.div
-      className=" w-full flex items-center z-50 p-4 pb-1 shadow-md justify-between bottom-0 absolute mt-auto bg-gradient-to-b from-muted/0 to-indigo-500/20  border-indigo-700 "
+      className=" w-full flex items-center z-50 p-4 pb-1 shadow-md justify-between bottom-0 absolute mt-auto bg-gradient-to-b from-muted/0 to-background border-indigo-700 "
       initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2 }}
@@ -29,19 +29,18 @@ function BottomMenu() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: index * 0.2 }}
-          className="bg-gradient-to-r from-muted/0 to-indigo-500/50 border-t-[.1rem] border-l-[.1rem] rounded-full border-indigo-700"
+          className="bg-gradient-to-r from-background to-indigo-500 border-t-[.1rem] border-l-[.1rem] rounded-full border-indigo-700"
         >
           {Icon === BsFillChatFill ? (
             <>
               <Link href={href}>
                 <BsFillChatFill
                   size={28}
-                  className={cn("transform -scale-x-100 m-2 ")}
+                  className={cn("transform relative -scale-x-100 m-2 ")}
                 />
                 <Image
                   src={TinyDancingMan}
                   width={18}
-                  height={18}
                   alt="Fællestival Tiny Dancing Man Logo"
                   className="z-10 ml-[.15rem] mt-[0.32rem] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                 />

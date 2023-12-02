@@ -35,14 +35,14 @@ const MobileNav = () => {
   }, [pathname]);
 
   return (
-    <div className="bg-background/80 mx-2 mt-2">
-      <div className="bg-gradient-to-b to-muted/0 from-indigo-500/20 sm:hidden w-full border-b-[.1rem] border-x-[.1rem] rounded-lg border-indigo-700 ">
+    <div className="mobile-device-menu bg-background/80 mx-2 mt-2 ">
+      <div className="bg-gradient-to-b to-muted/0 from-indigo-500/20  w-full border-b-[.1rem] border-x-[.1rem] rounded-lg border-indigo-700 mb-[.05rem]">
         <div className="grid grid-cols-5 justify-between py-2">
           <SettingsSheet>
-            <div className="text-left ml-3 col-span-1 ">
+            <div className="text-left ml-3 mt-1 col-span-1 ">
               <SettingsSheetTrigger>
                 <IoSettings
-                  size={24}
+                  size={32}
                   color={"gradient-to-b indigo-700/80 to foreground"}
                 />
               </SettingsSheetTrigger>
@@ -61,9 +61,9 @@ const MobileNav = () => {
           </div>
 
           <Sheet>
-            <div className="text-right  mr-3 col-span-1">
+            <div className="text-right mt-1 mr-3 col-span-1">
               <SheetTrigger className="user-menu" onClick={toggleOpen}>
-                <FaUserNinja size={24} />
+                <FaUserNinja size={32} />
               </SheetTrigger>
             </div>
 

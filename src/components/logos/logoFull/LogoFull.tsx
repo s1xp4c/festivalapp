@@ -5,10 +5,9 @@ export default function LogoFull() {
   return (
     <Image
       src={FaellestivalLogo}
-      width={"154"}
-      height={"154"}
-      alt="Picture of the author"
-      className=""
+      width={500}
+      height={500}
+      alt="Fællestival Tekst-logo"
     />
   );
 }

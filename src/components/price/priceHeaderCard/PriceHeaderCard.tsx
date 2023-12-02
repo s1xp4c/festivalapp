@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 
-interface HeaderInfoCardProps {
+interface PriceHeaderCardProps {
   title: string;
   href: string;
   subText: string;
@@ -11,7 +11,7 @@ interface HeaderInfoCardProps {
   interval: string;
 }
 
-const HeaderInfoCard: React.FC<HeaderInfoCardProps> = ({
+const PriceHeaderCard: React.FC<PriceHeaderCardProps> = ({
   title,
   href,
   subText,
@@ -48,4 +48,4 @@ const HeaderInfoCard: React.FC<HeaderInfoCardProps> = ({
   );
 };
 
-export default HeaderInfoCard;
+export default PriceHeaderCard;
