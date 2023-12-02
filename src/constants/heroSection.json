@@ -3,7 +3,7 @@
     {
       "src": "/hero/1.jpg",
       "title": "Fest og musik",
-      "subtext": "Kunst og håndværk"
+      "subtext": "Frivillighed og forening"
     },
     {
       "src": "/hero/2.jpg",
@@ -23,12 +23,42 @@
     {
       "src": "/hero/5.jpg",
       "title": "Lyskunst og design",
-      "subtext": "Laser og LED halløj"
+      "subtext": "Laser og LED"
     },
     {
       "src": "/hero/6.jpg",
       "title": "Spil og leg",
       "subtext": "Venskab og hygge"
+    },
+    {
+      "src": "/hero/7.jpg",
+      "title": "Tid til ro",
+      "subtext": "Et frimærke væk fra hverdagen"
+    },
+    {
+      "src": "/hero/8.jpg",
+      "title": "Upcoming kunstnere",
+      "subtext": "Det er her de starter"
+    },
+    {
+      "src": "/hero/9.jpg",
+      "title": "Natur og chill",
+      "subtext": "Venskaber for livet"
+    },
+    {
+      "src": "/hero/10.jpg",
+      "title": "Games i solen",
+      "subtext": "Øl i skyggen"
+    },
+    {
+      "src": "/hero/11.jpg",
+      "title": "Dans og fjollerti",
+      "subtext": "Plads til alle"
+    },
+    {
+      "src": "/hero/12.jpg",
+      "title": "Samtaler ved bålet",
+      "subtext": "Nattens venskaber"
     }
   ]
 }

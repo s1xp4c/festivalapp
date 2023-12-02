@@ -8,7 +8,7 @@ export const headerInfoLinks = [
     href: "events/Faellestival",
     subText:
       "Et helt almindeligt gæste og Crew Fælla medlemskab er for dig der bare gerne vil holde en kæmpe fest, en enkelt gang om året i Snævren, uge 29.\nDet skal koste dig ovenstående symbolske beløb af inflationsramte dubloner årligt fra du melder dig ind i foreningen. Ønsker du ik' længere at støtte eller deltage i Fællestival's foreningsliv, kan du selvfølgelig bare afmelde dig, og dit kontingent stopper når det udløber.\n\nFor denne formue, får du udover lov til at købe billet til årsfesten, selvfølgelig ås et løbende nyhedsbrev ind i din valgte e-brevbakke, med alt hvad der tumler i communitiet og Snævren gennem året.",
-    date: "10",
+    date: "10.",
     month: "nov.",
     year: "2024",
   },
@@ -18,7 +18,7 @@ export const headerInfoLinks = [
     href: "events/julefrokost",
     subText:
       "For Fællas der gerne vil ha' mulighed for at fange den årlige fest i Snævren i uge 29, men har lyst og mulighed for at støtte foreningen og sammenholdet med den ekstra mønt. Kontingentet koster 'fri' donation månedligt af inflationsramte stakater. (Dog sefølig minimum almindelig gæstemedlemskontingent)\n Ønsker du ik' længere at støtte eller deltage i Fællestival, kan du selvfølgelig bare afmelde dig, og dit kontingent stopper når det udløber.\n\nFor denne formuebeskattede rundbarbering, får du udover lov til at købe billet til årsfesten, selvfølgelig ås et løbende nyhedsbrev ind i din overfyldte e-brevbakke, med alt hvad der brænder af stort og småt i FÆLLA's communitiet og Snævren gennem året.",
-    date: "10",
+    date: "10.",
     month: "nov.",
     year: "2024",
   },
@@ -28,7 +28,7 @@ export const headerInfoLinks = [
     href: "events/paaskeparty",
     subText:
       "De gæve kæmper, bestående af Arrangører, Bestyrelsen og Crewet der gennem hele året lægger den tunge indsats med vedligeholdelse, byggerier, administration og generel najsliggørelse af Snævren så vi allesammen kan nyde, og fyre den af sammen i den smukke, fredede bakkedal på sydfyn. Det er sefølig ås for dig der ønsker medindflydelse, og bare ønsker at få brugt kroppen, og når støvet har lagt sig - Fyre den af med dine medFÆLLAS til alle byggeweekender, jule og påskefrokoster og alle de andre events vi fyrer af gennem året. Ovenstående '1 fadbamse i byen'-pris er en månedlig affære som er med til at dække Snævrens løbende udgifter ved at ha' os rendende i tide og utide og forstyrre Helle og Jens på deres undervurderede perle af en gammel spejdergrund",
-    date: "10",
+    date: "10.",
     month: "nov.",
     year: "2024",
   },
