@@ -1,32 +1,15 @@
 "use client";
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import HeroSection from ":/components/heroSection/HeroSection";
 import Info from ":/components/infos/info/Info";
 
-const MemoizedHeroSection = React.memo(HeroSection);
-const MemoizedInfo = React.memo(Info);
-
-interface HomeProps {
-  id: string;
-  title: string;
-  date: string;
-  features: string;
-  featureHeader: string;
-}
-
-const Home: React.FC<HomeProps> = () => {
+const Page: React.FC = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <MemoizedHeroSection />
-      <MemoizedInfo
-        id={""}
-        title={""}
-        date={""}
-        features={[]}
-        featureHeader={""}
-      />
-    </Suspense>
+    <>
+      <HeroSection />
+      <Info />
+    </>
   );
 };
 
-export default Home;
+export default Page;
