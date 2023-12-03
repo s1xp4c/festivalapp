@@ -4,7 +4,7 @@ import InfoCard from ":/components/infos/infoCard/InfoCard";
 import allInfos, {
   infoHeaderInfo,
   headerCtaButtonInfo,
-} from ":/constants/heroInfo";
+} from ":/constants/heroInfoData";
 
 const Info: React.FC = () => {
   const { headerInfo } = infoHeaderInfo;

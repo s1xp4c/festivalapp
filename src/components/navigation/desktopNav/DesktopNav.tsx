@@ -17,7 +17,7 @@ import {
 import Image from "next/image";
 import { ThemeToggle } from ":/components/themeToggle/ThemeToggle";
 
-import navigationData from ":/constants/Navigation.json";
+import navigationData from ":/constants/navigationTemplate.json";
 import MobileNav from ":/components/navigation/mobileNav/MobileNav";
 import { useEffect, useState } from "react";
 

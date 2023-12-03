@@ -29,7 +29,7 @@ function BottomMenu() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: index * 0.2 }}
-          className="bg-gradient-to-r from-background to-indigo-500 border-t-[.1rem] border-l-[.1rem] rounded-full border-indigo-700"
+          className="bg-gradient-to-r from-background to-indigo-500 border-t-[.1rem] border-l-[.1rem] rounded-full border-indigo-700 mb-[0.2rem]"
         >
           {Icon === BsFillChatFill ? (
             <>

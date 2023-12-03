@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import data from ":/constants/heroSection.json";
+import data from ":/constants/heroSliderTextData.json";
 
 const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -45,12 +45,12 @@ const HeroSection = () => {
           animate={{ opacity: currentImageIndex === index ? 1 : 0 }}
           transition={{ delay: 0.2, duration: 2 }}
         >
-          <div className="text-foreground text-center">
+          <div className="text-center">
             <motion.h1
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 2 }}
-              className="sm:text-5xl text-[1.2rem] font-bold drop-shadow-xl drop-shadow-purple-800 text-indigo-700/80 font-outline-2"
+              className="sm:text-5xl text-[1.5rem] font-bold drop-shadow-xl drop-shadow-white outline-cyan-600 font-outline-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
             >
               {image.title}
             </motion.h1>
@@ -58,7 +58,7 @@ const HeroSection = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 2 }}
-              className="mt-1 sm:mt-4 text-[.8rem] sm:text-2xl drop-shadow-xl drop-shadow-white text-purple-800 font-outline-2"
+              className="mt-1 sm:mt-4 text-[.8rem] sm:text-2xl drop-shadow-xl drop-shadow-white outline-cyan-600 font-outline-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
             >
               {image.subtext}
             </motion.p>

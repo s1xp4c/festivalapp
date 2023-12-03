@@ -35,7 +35,7 @@ const InfoHeader: React.FC<InfoHeaderProps> = ({
   headerInfoIcon: IconComponent,
 }) => {
   return (
-    <div className="grid grid-cols-[1fr_.7fr] gap-3 p-0 bg-none py-2">
+    <div className="grid grid-cols-[1fr_.4fr] gap-3 p-0 bg-none py-2">
       {/* Left side */}
       <div className="flex  flex-col justify-start rounded-lg bg-gradient-to-b from-muted/0 to-indigo-500/20 p-2">
         <div className="flex items-center flex-col justify-between">

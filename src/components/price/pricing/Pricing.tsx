@@ -3,7 +3,7 @@ import PriceCard from ":/components/price/priceCard/PriceCard";
 import allTickets, {
   priceHeaderInfo,
   headerCtaButtonInfo,
-} from ":/constants/prices";
+} from ":/constants/pricesData";
 import clsx from "clsx";
 import PriceHeader from ":/components/price/priceHeader/PriceHeader";
 
