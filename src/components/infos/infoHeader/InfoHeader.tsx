@@ -7,6 +7,7 @@ export interface InfoHeaderProps {
   title: string;
   subtitle1: string;
   subtitle2: string;
+  className?: string;
   headerInfoLinks: {
     id: string;
     title: string;

@@ -11,13 +11,14 @@ const Info: React.FC = () => {
   const { InfoTypes } = allInfos;
 
   return (
-    <div className="flex max-h-full w-full flex-col text-center">
+    <div className="flex flex-col w-full max-h-full text-center">
       <InfoHeader
         {...headerInfo[0]}
         ctaBtnInfo={headerCtaButtonInfo}
         onClick={() => {
           /* Function implementation */
         }}
+        className="mx-auto my-auto" // Adjust this class as per your original styling
       />
       <div className="grid grid-rows-4 gap-2.5 w-full mx-auto my-auto">
         {InfoTypes.map((infoType) => (
@@ -27,6 +28,7 @@ const Info: React.FC = () => {
             onClick={() => {
               /* Function implementation */
             }}
+            classes={{ root: "flex flex-col w-full p-2" }} // Preserving your styling
           />
         ))}
       </div>
