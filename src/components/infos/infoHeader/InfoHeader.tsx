@@ -7,21 +7,6 @@ export interface InfoHeaderProps {
   title: string;
   subtitle1: string;
   subtitle2: string;
-  className?: string;
-  headerInfoLinks: {
-    id: string;
-    title: string;
-    href: string;
-    subText: string;
-    date: string;
-    month: string;
-    year: string;
-  }[];
-  ctaBtnInfo: {
-    id: string;
-    title: string;
-    href: string;
-  };
   headerInfoIcon: React.ElementType;
   onClick: () => void;
 }
@@ -30,17 +15,17 @@ const InfoHeader: React.FC<InfoHeaderProps> = ({
   title,
   subtitle1,
   subtitle2,
-  headerInfoLinks,
-  ctaBtnInfo,
-  headerInfoIcon: IconComponent,
+  // eventData,
+  // ctaBtnData,
+  // headerInfoIcon,
 }) => {
   return (
-    <div className="grid grid-cols-[1fr_.4fr] gap-3 p-0 bg-none py-2">
+    <div className="grid grid-cols-[1fr_.35fr] gap-3 p-0 bg-none py-2">
       {/* Left side */}
       <div className="flex  flex-col justify-start rounded-lg bg-gradient-to-b from-muted/0 to-indigo-500/20 p-2">
         <div className="flex items-center flex-col justify-between">
           <div className="flex w-full">
-            <IconComponent className="text-2xl text-left" />
+            {/* <HeaderIcon className="text-2xl text-left" /> */}
             <p className="text-md font-medium ml-auto">{title}</p>
           </div>
         </div>
@@ -51,25 +36,24 @@ const InfoHeader: React.FC<InfoHeaderProps> = ({
           {subtitle2}
         </p>
         <CallToActionButton onClick={() => onclick}>
-          <Link href={ctaBtnInfo.href} className="text-[.65rem] ">
-            {ctaBtnInfo.title}
-          </Link>
+          {/* <Link href={ctaBtnData.href} className="text-[.65rem] ">
+            {ctaBtnData.title}
+          </Link> */}
         </CallToActionButton>
       </div>
 
       {/* Right side */}
-      <div className="border-b-2 border-r-[.01rem] mt-1 border-r-indigo-500   rounded-lg p-2 h-full flex flex-col justify-evenly">
-        {headerInfoLinks.map((link) => (
+      <div className="border-b-2 border-r-[.01rem] mt-0 border-r-indigo-500   rounded-lg p-2 h-full flex flex-col text-right justify-evenly">
+        {/* {eventData.map((data) => (
           <InfoHeaderCard
-            key={link.id}
-            title={link.title}
-            subText={link.subText}
-            href={link.href}
-            date={link.date}
-            month={link.month}
-            year={link.year}
+            key={data.id}
+            title={data.title}
+            href={data.href}
+            date={data.date}
+            EventIcon={data.eventIcon}
+            active={data.active}
           />
-        ))}
+        ))} */}
       </div>
     </div>
   );

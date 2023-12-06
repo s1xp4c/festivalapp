@@ -50,7 +50,7 @@ const HeroSection = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 2 }}
-              className="sm:text-5xl text-[1.5rem] font-bold drop-shadow-xl drop-shadow-white outline-cyan-600 font-outline-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+              className="sm:text-5xl text-[1.5rem] font-bold  bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
             >
               {image.title}
             </motion.h1>

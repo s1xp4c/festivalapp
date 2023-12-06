@@ -1,34 +1,52 @@
 import React from "react";
 import InfoHeader from ":/components/infos/infoHeader/InfoHeader";
 import InfoCard from ":/components/infos/infoCard/InfoCard";
-import allInfos, {
-  infoHeaderInfo,
-  headerCtaButtonInfo,
-} from ":/constants/heroInfoData";
+import { infoCardsData, infoHeaderData } from ":/constants/heroInfoData";
 
-const Info: React.FC = () => {
-  const { headerInfo } = infoHeaderInfo;
-  const { InfoTypes } = allInfos;
+interface CardProps {
+  onClick: () => void;
+}
+
+export interface InfoCardTypes {
+  title: string;
+  content: {
+    id: string;
+    title: string;
+    text: string;
+    lineClamp: string;
+    btnText: string;
+    href: string;
+    floatImage: {
+      id: string;
+      width: number;
+      height: number;
+      src: string;
+    };
+    iconName: string;
+  }[];
+}
+const Info: React.FC<CardProps> = ({ onClick }) => {
+  const { ...infoData } = infoCardsData[0];
+
+  //  const { headerData } = infoHeaderData[0];
 
   return (
     <div className="flex flex-col w-full max-h-full text-center">
-      <InfoHeader
-        {...headerInfo[0]}
-        ctaBtnInfo={headerCtaButtonInfo}
-        onClick={() => {
-          /* Function implementation */
-        }}
-        className="mx-auto my-auto" // Adjust this class as per your original styling
-      />
+      <div className="">{infoData.title}</div>
+      {/* <InfoHeader InfoHeaderCardProps={...headerData} /> */}
       <div className="grid grid-rows-4 gap-2.5 w-full mx-auto my-auto">
-        {InfoTypes.map((infoType) => (
+        {infoData.content.map((contentData) => (
           <InfoCard
-            key={infoType.id}
-            {...infoType}
-            onClick={() => {
-              /* Function implementation */
-            }}
-            classes={{ root: "flex flex-col w-full p-2" }} // Preserving your styling
+            id={contentData.id}
+            title={contentData.title}
+            iconName={contentData.iconName}
+            text={contentData.text}
+            floatImage={contentData.floatImage}
+            lineClamp={contentData.lineClamp}
+            btnText={contentData.btnText}
+            href={contentData.href}
+            onClick={onClick}
+            classes={{ root: "flex flex-col w-full p-2" }}
           />
         ))}
       </div>
