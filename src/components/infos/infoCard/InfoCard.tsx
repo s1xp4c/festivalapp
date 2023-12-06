@@ -48,7 +48,7 @@ const InfoCard: React.FunctionComponent<InfoProps> = (props) => {
   const renderIcon = () => {
     if (typeof IconOrPath === "string") {
       // It's an SVG file path
-      return <img src={IconOrPath} width={36} alt={iconName} />;
+      return <Image src={IconOrPath} width={36} height={36} alt={iconName} />;
     } else {
       // It's a React component
       const IconComponent = IconOrPath;
@@ -76,7 +76,7 @@ const InfoCard: React.FunctionComponent<InfoProps> = (props) => {
         </div>
         <div className="">
           <Image
-            id={floatImage.id}
+            key={floatImage.id}
             src={imgURL}
             width={floatImage.width}
             height={floatImage.height}

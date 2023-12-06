@@ -38,6 +38,7 @@ const Info: React.FC<CardProps> = ({ onClick }) => {
         {infoData.content.map((contentData) => (
           <InfoCard
             id={contentData.id}
+            key={contentData.id}
             title={contentData.title}
             iconName={contentData.iconName}
             text={contentData.text}
