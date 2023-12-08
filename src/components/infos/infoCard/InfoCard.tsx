@@ -1,9 +1,9 @@
 import React from "react";
 import clsx from "clsx";
-import CallToActionButton from "../../buttons/callToActionButton/CtaButtonWrapper";
-import Link from "next/link";
+import CallToActionButton from ":/components/buttons/callToActionButton/CtaButtonWrapper";
 import { allIcons } from ":/constants/allIcons";
 import Image from "next/image";
+import Link from "next/link";
 
 interface InfoProps {
   id: string;
@@ -20,24 +20,20 @@ interface InfoProps {
   btnText: string;
   href: string;
   iconName: string;
-
-  // ctaBtnData: string;
   classes?: Partial<Record<"root", string>>;
-  onClick: () => void;
 }
 
-const InfoCard: React.FunctionComponent<InfoProps> = (props) => {
-  const {
-    iconName,
-    id,
-    title,
-    text,
-    floatImage,
-    lineClamp,
-    btnText,
-    href,
-    classes,
-  } = props;
+const InfoCard: React.FunctionComponent<InfoProps> = ({
+  iconName,
+  id,
+  title,
+  text,
+  floatImage,
+  lineClamp,
+  btnText,
+  href,
+  classes,
+}) => {
   const IconOrPath = allIcons[iconName];
 
   if (!IconOrPath) {
@@ -60,11 +56,15 @@ const InfoCard: React.FunctionComponent<InfoProps> = (props) => {
   const floatClass = isIdOdd ? "float-left mr-2" : "float-right ml-2";
   const imgURL = floatImage.src;
 
+  const handleClick = () => {
+    onclick;
+  };
+
   return (
     <div className="my-0" id={id}>
       <div
         className={clsx(
-          " h-full w-full select-none flex flex-none rounded-lg bg-gradient-to-b from-muted/0 to-indigo-500/20 p-0 no-underline outline-none focus:shadow-md",
+          "h-full w-full select-none flex flex-none rounded-lg bg-gradient-to-b from-muted/0 to-indigo-500/20 p-0 no-underline outline-none focus:shadow-md",
           classes?.root
         )}
       >
@@ -92,7 +92,7 @@ const InfoCard: React.FunctionComponent<InfoProps> = (props) => {
             >
               {text}
             </p>
-            <CallToActionButton onClick={() => onclick}>
+            <CallToActionButton onClick={() => handleClick}>
               <Link href={href} className="text-[.65rem] ">
                 {btnText}
               </Link>

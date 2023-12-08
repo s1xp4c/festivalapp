@@ -70,7 +70,10 @@ const MobileNav = () => {
             <SheetContent>
               <SheetHeader className="mt-10">
                 <SheetTitle>💜 Kom indenfor 💜</SheetTitle>
-                <SheetDescription></SheetDescription>
+                <SheetDescription>
+                  <div>Sign in</div>
+                  <div>Sign up</div>
+                </SheetDescription>
               </SheetHeader>
             </SheetContent>
           </Sheet>

@@ -75,7 +75,7 @@ export const infoCardsData = [
         floatImage: floatImages[0],
         lineClamp: "line-clamp-4",
         btnText: "Se billeder",
-        href: "/billeder",
+        href: "public/billeder",
       },
       {
         id: "1",
@@ -85,7 +85,7 @@ export const infoCardsData = [
         floatImage: floatImages[1],
         lineClamp: "line-clamp-4",
         btnText: "Tilmeld dig",
-        href: "/tilmelding",
+        href: "secure/tilmelding",
       },
       {
         id: "2",
@@ -95,7 +95,7 @@ export const infoCardsData = [
         floatImage: floatImages[2],
         lineClamp: "line-clamp-4",
         btnText: "Bliv medlem",
-        href: "/medlemskab",
+        href: "secure/medlemskab",
       },
       {
         id: "3",
@@ -105,7 +105,7 @@ export const infoCardsData = [
         floatImage: floatImages[3],
         lineClamp: "line-clamp-4",
         btnText: "Bliv medlem",
-        href: "/medlemskab",
+        href: "secure/medlemskab",
       },
       {
         id: "4",
@@ -115,7 +115,7 @@ export const infoCardsData = [
         floatImage: floatImages[4],
         lineClamp: "line-clamp-4",
         btnText: "Se kort",
-        href: "kort",
+        href: "public/kort",
       },
     ],
   },
