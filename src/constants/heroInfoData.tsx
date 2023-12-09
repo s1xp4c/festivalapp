@@ -71,7 +71,7 @@ export const infoCardsData = [
         id: "0",
         title: "Om festivalen . . .",
         iconName: "TinyDancingManSvg",
-        text: "Fællestival er en 100% non-profit festival og forening, og som man kan drage af titlen, er det en festival i fællesskabets ånd, hvor alle (som har lyst) hjælper til og er med til at skabe et lækkert årligt arrangement, og gennem året vedligeholde bygninger, og den fredede natur i området. Det betyder blandt andet også, at alle gæster giver en hånd med under festivalen med små hjælpeopgaver, og bl.a. er med til at rydde op efter sig selv og nattens dansefest, skænke en fadøl, eller eksempelvis være med til at slæbe øl. Det skaber fantastiske nye bekendtskaber og venner mens vi hygger os med opgaverne over en kold pils eller en vand.",
+        text: "Fællestival er en 100% non-profit festival og forening, og som man kan drage af titlen, er det en festival i fællesskabets ånd, hvor alle (som har lyst) hjælper til og er med til at skabe et lækkert årligt arrangement, og gennem året vedligeholde bygninger, og den fredede natur i området. Det betyder blandt andet også, at alle gæster giver en hånd med under festivalen med små hjælpeopgaver, og bl.a. er med til at rydde op efter sig selv og nattens dansefest, skænke en fadøl, eller eksempelvis være med til at slæbe øl. \n\nDet skaber fantastiske nye bekendtskaber og venner mens vi hygger os med opgaverne over en kold pils eller en vand.",
         floatImage: floatImages[0],
         lineClamp: "line-clamp-3",
         btnText: "Se billeder",

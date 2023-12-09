@@ -100,7 +100,7 @@ const InfoCard: React.FunctionComponent<InfoProps> = ({
         <div className="w-20">
           <CallToActionButton onClick={() => setIsClamped(!isClamped)}>
             <div className="text-[.65rem] ">
-              {isClamped ? "Fold ud  ▲" : "Klap i  ▼"}
+              {isClamped ? "Fold ud ▲" : "Klap i ▼"}
             </div>
           </CallToActionButton>
         </div>
