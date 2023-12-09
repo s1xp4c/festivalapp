@@ -82,7 +82,7 @@ const CountdownTile: React.FC<CountdownTileProps> = ({
           </motion.span>
         </AnimatePresence>
 
-        <span className="text-[0.6rem] text-foreground/80 mr-1 w-full mb-[0.1rem]">
+        <span className="text-[0.6rem] bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mr-1 w-full mb-[0.1rem]">
           {unitTranslations[unit]}
         </span>
       </div>

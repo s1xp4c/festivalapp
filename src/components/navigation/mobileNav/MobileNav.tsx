@@ -32,7 +32,7 @@ const MobileNav = () => {
 
   useEffect(() => {
     if (isOpen) toggleOpen();
-  }, [pathname]);
+  }, [pathname, isOpen]);
 
   return (
     <div className="mobile-device-menu bg-background/80 mx-2 mt-2 ">

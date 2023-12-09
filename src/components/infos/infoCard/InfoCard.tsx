@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import CallToActionButton from ":/components/buttons/callToActionButton/CtaButtonWrapper";
 import { allIcons } from ":/constants/allIcons";
@@ -34,6 +34,7 @@ const InfoCard: React.FunctionComponent<InfoProps> = ({
   href,
   classes,
 }) => {
+  const [isClamped, setIsClamped] = useState(true);
   const IconOrPath = allIcons[iconName];
 
   if (!IconOrPath) {
@@ -44,7 +45,7 @@ const InfoCard: React.FunctionComponent<InfoProps> = ({
   const renderIcon = () => {
     if (typeof IconOrPath === "string") {
       // It's an SVG file path
-      return <Image src={IconOrPath} width={36} height={36} alt={iconName} />;
+      return <Image src={IconOrPath} width={28} height={28} alt={iconName} />;
     } else {
       // It's a React component
       const IconComponent = IconOrPath;
@@ -53,51 +54,62 @@ const InfoCard: React.FunctionComponent<InfoProps> = ({
   };
 
   const isIdOdd = parseInt(floatImage.id) % 2 !== 0;
-  const floatClass = isIdOdd ? "float-left mr-2" : "float-right ml-2";
+  const floatClass = isIdOdd ? "float-left mr-3" : "float-right ml-3";
   const imgURL = floatImage.src;
 
   const handleClick = () => {
     onclick;
   };
 
+  const textClass = isClamped ? lineClamp : "";
+
+  const cardClass = clsx(
+    "w-full select-none rounded-lg bg-gradient-to-b from-muted/0 to-indigo-500/20 no-underline outline-none focus:shadow-md",
+    isClamped ? "h-auto" : "h-full", // Dynamically adjust height
+    classes?.root
+  );
   return (
-    <div className="my-0" id={id}>
-      <div
-        className={clsx(
-          "h-full w-full select-none flex flex-none rounded-lg bg-gradient-to-b from-muted/0 to-indigo-500/20 p-0 no-underline outline-none focus:shadow-md",
-          classes?.root
-        )}
-      >
-        <div className="flex gap-2 items-center mb-2">
-          {renderIcon()}
-          <span className="rounded-full flex mb-0 mt-0 text-xs text-center justify-center font-medium">
-            {title}
-          </span>
+    <div id={id} className={cardClass}>
+      <div className="flex gap-4 items-center pb-1">
+        {renderIcon()}
+        <span className="rounded-full flex text-xs text-center justify-center font-medium bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+          {title}
+        </span>
+      </div>
+      <div className="my-1">
+        <Image
+          key={floatImage.id}
+          src={imgURL}
+          width={floatImage.width}
+          height={floatImage.height}
+          alt={floatImage.alt}
+          className={clsx("rounded-md ", floatClass)}
+        />
+        <div className="text-[.6rem]/[.8] md:text-lg w-full text-foreground">
+          <p
+            className={clsx(
+              " text-[.6rem] leading-snug text-muted-foreground text-left",
+              textClass
+            )}
+          >
+            {text}
+          </p>
         </div>
-        <div className="">
-          <Image
-            key={floatImage.id}
-            src={imgURL}
-            width={floatImage.width}
-            height={floatImage.height}
-            alt={floatImage.alt}
-            className={clsx("rounded-md mb-2", floatClass)}
-          />
-          <div className="text-[.6rem]/[.8] md:text-lg w-full mt-0 mb-1 text-foreground">
-            <p
-              className={clsx(
-                " text-[.6rem] leading-snug text-muted-foreground text-left",
-                lineClamp
-              )}
-            >
-              {text}
-            </p>
-            <CallToActionButton onClick={() => handleClick}>
-              <Link href={href} className="text-[.65rem] ">
-                {btnText}
-              </Link>
-            </CallToActionButton>
-          </div>
+      </div>
+      <div className="flex justify-between ">
+        <div className="w-20">
+          <CallToActionButton onClick={() => setIsClamped(!isClamped)}>
+            <div className="text-[.60rem] ">
+              {isClamped ? "Fold ud  ▲" : "Klap i  ▼"}
+            </div>
+          </CallToActionButton>
+        </div>
+        <div className="w-20">
+          <CallToActionButton onClick={() => handleClick}>
+            <Link href={href} className="text-[.60rem] ">
+              {btnText}
+            </Link>
+          </CallToActionButton>
         </div>
       </div>
     </div>
