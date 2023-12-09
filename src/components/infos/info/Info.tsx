@@ -7,8 +7,8 @@ const Info: React.FC = () => {
   const { ...infoData } = infoCardsData[0];
 
   return (
-    <div className="flex flex-col w-full text-center mb-20">
-      <div className="">{infoData.title}</div>
+    <div className="flex flex-col w-full text-center mb-20 mt-4">
+      <div className="text-lg">{infoData.title}</div>
       <div className="grid grid-cols-1 gap-2.5 w-full">
         {infoData.content.map((contentData) => (
           <InfoCard

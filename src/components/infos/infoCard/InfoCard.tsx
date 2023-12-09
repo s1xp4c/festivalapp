@@ -72,11 +72,11 @@ const InfoCard: React.FunctionComponent<InfoProps> = ({
     <div id={id} className={cardClass}>
       <div className="flex gap-4 items-center pb-1">
         {renderIcon()}
-        <span className="rounded-full flex text-xs text-center justify-center font-medium bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <span className="rounded-full flex text-md text-center justify-center font-medium bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           {title}
         </span>
       </div>
-      <div className="my-1">
+      <div className="my-2">
         <Image
           key={floatImage.id}
           src={imgURL}
@@ -85,10 +85,10 @@ const InfoCard: React.FunctionComponent<InfoProps> = ({
           alt={floatImage.alt}
           className={clsx("rounded-md ", floatClass)}
         />
-        <div className="text-[.6rem]/[.8] md:text-lg w-full text-foreground">
+        <div className="text-[.75rem]/[.8] md:text-lg w-full text-foreground">
           <p
             className={clsx(
-              " text-[.6rem] leading-snug text-muted-foreground text-left",
+              " text-[.75rem] leading-snug text-muted-foreground text-left",
               textClass
             )}
           >
@@ -96,17 +96,17 @@ const InfoCard: React.FunctionComponent<InfoProps> = ({
           </p>
         </div>
       </div>
-      <div className="flex justify-between ">
+      <div className="flex justify-between mb-1">
         <div className="w-20">
           <CallToActionButton onClick={() => setIsClamped(!isClamped)}>
-            <div className="text-[.60rem] ">
+            <div className="text-[.65rem] ">
               {isClamped ? "Fold ud  ▲" : "Klap i  ▼"}
             </div>
           </CallToActionButton>
         </div>
         <div className="w-20">
           <CallToActionButton onClick={() => handleClick}>
-            <Link href={href} className="text-[.60rem] ">
+            <Link href={href} className="text-[.65rem] ">
               {btnText}
             </Link>
           </CallToActionButton>
