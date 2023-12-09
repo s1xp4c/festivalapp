@@ -101,11 +101,11 @@ const InfoCard: React.FunctionComponent<InfoProps> = ({
           <CallToActionButton onClick={() => setIsClamped(!isClamped)}>
             {isClamped ? (
               <div className="text-[.65rem] whitespace-pre-wrap after:content-['_▲']">
-                {"Fold ud     "}
+                {"Fold ud   "}
               </div>
             ) : (
               <div className="text-[.65rem] whitespace-pre-wrap after:content-['_▼']">
-                {"Klap i       "}
+                {"Klap i     "}
               </div>
             )}
           </CallToActionButton>
