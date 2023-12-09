@@ -1,7 +1,7 @@
 {
   "name": "faellesappen",
   "author": "Morten Six",
-  "version": "0.2.4.1",
+  "version": "0.2.4.3",
   "private": true,
   "scripts": {
     "dev": "next dev",

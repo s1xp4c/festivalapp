@@ -88,7 +88,7 @@ const InfoCard: React.FunctionComponent<InfoProps> = ({
         <div className="text-[.75rem]/[.8] md:text-lg w-full text-foreground">
           <p
             className={clsx(
-              " text-[.75rem] leading-snug text-muted-foreground text-left",
+              " text-[.75rem] leading-snug text-muted-foreground text-left whitespace-pre-line",
               textClass
             )}
           >
@@ -99,9 +99,15 @@ const InfoCard: React.FunctionComponent<InfoProps> = ({
       <div className="flex justify-between mb-1">
         <div className="w-20">
           <CallToActionButton onClick={() => setIsClamped(!isClamped)}>
-            <div className="text-[.65rem] ">
-              {isClamped ? "Fold ud ▲" : "Klap i ▼"}
-            </div>
+            {isClamped ? (
+              <div className="text-[.65rem] whitespace-pre-wrap after:content-['_▲']">
+                {"Fold ud     "}
+              </div>
+            ) : (
+              <div className="text-[.65rem] whitespace-pre-wrap after:content-['_▼']">
+                {"Klap i       "}
+              </div>
+            )}
           </CallToActionButton>
         </div>
         <div className="w-20">

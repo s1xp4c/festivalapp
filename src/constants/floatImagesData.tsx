@@ -8,15 +8,15 @@ export const floatImages = [
   {
     id: "0",
     alt: "Festivalen",
-    width: 80,
-    height: 20,
+    width: 112,
+    height: 28,
     src: "/hero/1.jpg",
   },
   {
     id: "1",
     alt: "Deltagerne",
-    width: 80,
-    height: 20,
+    width: 150,
+    height: 90,
     src: "/hero/2.jpg",
   },
   {
@@ -29,15 +29,15 @@ export const floatImages = [
   {
     id: "3",
     alt: "Økonomi",
-    width: 80,
-    height: 20,
+    width: 125,
+    height: 40,
     src: "/hero/5.jpg",
   },
   {
     id: "4",
     alt: "Kort",
-    width: 80,
-    height: 20,
+    width: 105,
+    height: 25,
     src: "/hero/6.jpg",
   },
 ];

@@ -10,11 +10,11 @@ import Link from "next/link";
 
 function BottomMenu() {
   const icons: { Icon: React.ElementType; href: string }[] = [
-    { Icon: FaShoppingCart, href: "secure/kurv/" },
-    { Icon: FaInfo, href: "info/" },
-    { Icon: IoChatbubblesSharp, href: "secure/chat/" },
+    { Icon: FaShoppingCart, href: "kurv/" },
+    // { Icon: FaInfo, href: "info/" },
+    { Icon: IoChatbubblesSharp, href: "chat/" },
     { Icon: FaGuitar, href: "musik/" },
-    { Icon: FaHouseFlag, href: "secure/butik/" },
+    // { Icon: FaHouseFlag, href: "butik/" },
   ];
   return (
     <motion.div
