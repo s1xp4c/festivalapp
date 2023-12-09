@@ -15,7 +15,7 @@ export const floatImages = [
   {
     id: "1",
     alt: "Deltagerne",
-    width: 150,
+    width: 145,
     height: 90,
     src: "/hero/2.jpg",
   },
