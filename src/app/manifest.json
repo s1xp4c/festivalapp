@@ -1,6 +1,5 @@
 {
-  "title": "Fællestival",
-  "url": "https://faellestival.lol/",
+  "name": "Fællestival",
   "start_url": "https://faellestival.lol/",
   "short_name": "Fællestival",
   "generator": "Next.js",
