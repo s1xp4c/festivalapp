@@ -36,43 +36,6 @@ export const metadata = {
       "en-US": "/en-US",
     },
   },
-  icons: [
-    {
-      src: "|/favicons/icon1.png",
-      sizes: "16x16",
-      type: "image/png",
-    },
-    {
-      src: "|/favicons/icon2.png",
-      sizes: "32x32",
-      type: "image/png",
-    },
-    {
-      src: "|/favicons/icon3.png",
-      sizes: "192x192",
-      type: "image/png",
-    },
-    {
-      src: "|/favicons/icon4.png",
-      sizes: "256x256",
-      type: "image/png",
-    },
-    {
-      src: "|/favicons/icon5.png",
-      sizes: "270x270",
-      type: "image/png",
-    },
-    {
-      src: "|/favicons/apple-icon.png",
-      sizes: "180x180",
-      type: "image/png",
-    },
-    {
-      src: "|/favicons/icon6.svg",
-      sizes: "512x512",
-      type: "image/svg",
-    },
-  ],
   keywords: [
     "Festival, Frivillig, Kærlighed, Hyggefest, Fælleskab, Fællestival, Fest, Friluftsliv, Musik, Events, Fyn, Sydfyn, Stenstrup, Svendborg, Forening, Foreningsliv, Almennyttig, Vækstlaget, Odense, Ringe, Rudme, Kværndrup, festivaler, Festivalforening, musikevent, billig ferie, ferie, uge 29",
   ],
