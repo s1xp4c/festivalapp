@@ -30,7 +30,8 @@ const HeroSection = () => {
           <Image
             src={image.src}
             alt={`Image ${index + 1}`}
-            fill
+            width={500}
+            height={500}
             style={{ objectFit: "cover", borderRadius: "" }}
           />
         </motion.div>

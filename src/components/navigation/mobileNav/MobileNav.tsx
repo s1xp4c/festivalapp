@@ -41,10 +41,7 @@ const MobileNav = () => {
           <SettingsSheet>
             <div className="text-left ml-3 mt-1 col-span-1 ">
               <SettingsSheetTrigger>
-                <IoSettings
-                  size={32}
-                  color={"gradient-to-b indigo-700/80 to foreground"}
-                />
+                <IoSettings alt={"Settings"} size={32} />
               </SettingsSheetTrigger>
             </div>
             <SettingsSheetContent side="left">
@@ -63,7 +60,7 @@ const MobileNav = () => {
           <Sheet>
             <div className="text-right mt-1 mr-3 col-span-1">
               <SheetTrigger className="user-menu" onClick={toggleOpen}>
-                <FaUserNinja size={32} />
+                <FaUserNinja size={32} alt={"User Menu"} />
               </SheetTrigger>
             </div>
 

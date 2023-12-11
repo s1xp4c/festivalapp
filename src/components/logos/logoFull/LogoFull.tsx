@@ -1,5 +1,5 @@
 import Image from "next/image";
-import FaellestivalLogo from "|/logos/faellestival-logo-white.png";
+import FaellestivalLogo from "|/logos/FaellestivalLogoWhite.svg";
 
 export default function LogoFull() {
   return (
@@ -7,7 +7,7 @@ export default function LogoFull() {
       src={FaellestivalLogo}
       width={500}
       height={500}
-      alt="Fællestival Tekst-logo"
+      alt="Fællestival Tekst-logo svg"
     />
   );
 }
