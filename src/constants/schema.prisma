@@ -1,6 +1,7 @@
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
 generator client {
@@ -8,73 +9,114 @@ generator client {
 }
 
 model User {
-  id            Int         @id @default(autoincrement())
-  email         String         @unique 
-  fullName      String
-  username      String         @unique 
-  phoneNumber   Int            @unique 
-  zipCode       Int     
-  posts         Post[]
-  profile       Profile?       
-  role          Role           @default(USER)       
-  status        StatusType     @default(ACTIVE)
-  blockExpires  DateTime?
-  member        Membership?    
-  events        Event[]        
+  id           Int           @id @default(autoincrement())
+  name         String        @db.VarChar(255)
+  email        String        @unique @db.VarChar(255)
+  username     String        @unique @db.VarChar(255)
+  phoneNumber  Int?          @unique
+  zipCode      Int?
+  posts        Post[]
+  profile      Profile?
+  role         Role          @default(USER)
+  status       StatusType    @default(ACTIVE)
+  blockExpires DateTime?
+  membership   Membership?
+  events       Event[]
+  teams        TeamAccepts[]
+  camp         Camp?
+  password     String
 }
 
 model Profile {
-  id            Int            @id @default(autoincrement())
-  bio           String
-  user          User           @relation(fields: [userId], references: [id])
-  userId        Int            @unique
-  avatarUrl     String?
-  wallet        Float          @default(0)
-  createdAt     DateTime       @default(now())
-  updatedAt     DateTime       @updatedAt
-  lastLogin     DateTime?
-
+  id          Int       @id @default(autoincrement())
+  bio         String?
+  user        User      @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  userId      Int       @unique
+  avatar      String?
+  headerImage String?
+  wallet      Float     @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  lastLogin   DateTime?
+  isPublic    Boolean   @default(false)
+  social      Json?
 }
 
 model Post {
-  id           Int             @id @default(autoincrement())
-  createdAt    DateTime        @default(now())
-  updatedAt    DateTime        @updatedAt
-  title        String
-  published    Boolean         @default(false)
-  author       User            @relation(fields: [authorId], references: [id])
-  authorId     Int
-  categories   Category[]
+  id         Int        @id @default(autoincrement())
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  title      String
+  published  Boolean    @default(false)
+  author     User       @relation(fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  authorId   Int        @unique
+  categories Category[]
 }
 
 model Category {
-  id           Int             @id @default(autoincrement())
-  name         String
-  posts        Post[]
+  createdAt DateTime @default(now())
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  posts     Post[]
+}
+
+model Camp {
+  createdAt   DateTime @default(now())
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  contactInfo String?
+  avatar      String?
+  headerImage String?
+  isOpen      Boolean  @default(false)
+  isPublic    Boolean  @default(false)
+  user        User     @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  userId      Int      @unique
 }
 
 model Membership {
-  id            String         @id @default(uuid())
-  member        User           @relation(fields: [memberID], references: [id])
-  memberID      Int            @unique
-  memberType    MemberType[]
-  isActive      Boolean        @default(true)
-  startedAt     DateTime       @default(now())
-  expiresAt     DateTime
-  FeeInterval   DateTime
-  tokenFee      Float
+  createdAt   DateTime     @default(now())
+  id          String       @id @default(uuid())
+  user        User         @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  userId      Int          @unique
+  memberType  MemberType[]
+  isActive    Boolean      @default(true)
+  startedAt   DateTime     @default(now())
+  expiresAt   DateTime
+  FeeInterval DateTime
+  tokenFee    Float
 }
 
 model Event {
-  id            String         @id @default(uuid())
-  title         String
-  subText       String?
-  href          String
-  tokenFee      Float
-  eventStart    DateTime
-  eventEnd      DateTime  
-  guest         User           @relation(fields: [guestId], references: [id])
-  guestId       Int            @unique
+  id         String   @id @default(uuid())
+  title      String
+  subText    String?
+  href       String
+  tokenFee   Float
+  eventStart DateTime
+  eventEnd   DateTime
+  user       User     @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  userId     Int      @unique
+}
+
+model Team {
+  id          Int     @id @default(autoincrement())
+  name        String
+  teamDetails String?
+
+  members TeamAccepts[]
+}
+
+model TeamAccepts {
+  createdAt DateTime @default(now())
+  role      Role
+
+  userId Int
+  teamId Int
+  user   User @relation(fields: [userId], references: [id])
+  team   Team @relation(fields: [teamId], references: [id])
+
+  @@id([userId, teamId])
+  @@index([userId, role])
 }
 
 enum StatusType {
@@ -103,31 +145,29 @@ enum Role {
   ADMIN
 }
 
- enum TeamName {
-   BESTYRELSE
-   OEKONOMI
-   BETABAR
-   WEBIT
-   ALTERNABAR
-   PR
-   BOBSMOODS
-   LOGISTIK
-   TEKNIK
-   KONFERENCIER
-   KOEKKEN
-   BOOKING
-   MEDIC
-   BANDCARE
-   EXITCREW
-   CHECKIN
-   MOKKAMOK
-   RENOVATION
-   LAEKKERBIXEN
-   BAGER
-   OPVASK
-   KREA
-   OPNEDMAD
-   CHILL
- }
-
-
+enum TeamName {
+  BESTYRELSE
+  OEKONOMI
+  BETABAR
+  WEBIT
+  ALTERNABAR
+  PR
+  BOBSMOODS
+  LOGISTIK
+  TEKNIK
+  KONFERENCIER
+  KOEKKEN
+  BOOKING
+  MEDIC
+  BANDCARE
+  EXITCREW
+  CHECKIN
+  MOKKAMOK
+  RENOVATION
+  LAEKKERBIXEN
+  BAGER
+  OPVASK
+  KREA
+  OPNEDMAD
+  CHILL
+}

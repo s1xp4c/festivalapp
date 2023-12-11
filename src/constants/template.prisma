@@ -1,0 +1,133 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            Int         @id @default(autoincrement())
+  email         String         @unique 
+  fullName      String
+  username      String         @unique 
+  phoneNumber   Int            @unique 
+  zipCode       Int     
+  posts         Post[]
+  profile       Profile?       
+  role          Role           @default(USER)       
+  status        StatusType     @default(ACTIVE)
+  blockExpires  DateTime?
+  member        Membership?    
+  events        Event[]        
+}
+
+model Profile {
+  id            Int            @id @default(autoincrement())
+  bio           String
+  user          User           @relation(fields: [userId], references: [id])
+  userId        Int            @unique
+  avatarUrl     String?
+  wallet        Float          @default(0)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  lastLogin     DateTime?
+
+}
+
+model Post {
+  id           Int             @id @default(autoincrement())
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  title        String
+  published    Boolean         @default(false)
+  author       User            @relation(fields: [authorId], references: [id])
+  authorId     Int
+  categories   Category[]
+}
+
+model Category {
+  id           Int             @id @default(autoincrement())
+  name         String
+  posts        Post[]
+}
+
+model Membership {
+  id            String         @id @default(uuid())
+  member        User           @relation(fields: [memberID], references: [id])
+  memberID      Int            @unique
+  memberType    MemberType[]
+  isActive      Boolean        @default(true)
+  startedAt     DateTime       @default(now())
+  expiresAt     DateTime
+  FeeInterval   DateTime
+  tokenFee      Float
+}
+
+model Event {
+  id            String         @id @default(uuid())
+  title         String
+  subText       String?
+  href          String
+  tokenFee      Float
+  eventStart    DateTime
+  eventEnd      DateTime  
+  guest         User           @relation(fields: [guestId], references: [id])
+  guestId       Int            @unique
+}
+
+enum StatusType {
+  ACTIVE
+  INACTIVE
+  BLOCKED
+}
+
+enum MemberType {
+  MEMBER
+  SUPPORT
+  CREW
+  ALLYEARCREW
+  ARTIST
+  NEIGHBOUR
+  FREEBEE
+}
+
+enum Role {
+  USER
+  CREW
+  CREWMANAGER
+  COORDINATOR
+  HAND
+  ALLADMIN
+  ADMIN
+}
+
+ enum TeamName {
+   BESTYRELSE
+   OEKONOMI
+   BETABAR
+   WEBIT
+   ALTERNABAR
+   PR
+   BOBSMOODS
+   LOGISTIK
+   TEKNIK
+   KONFERENCIER
+   KOEKKEN
+   BOOKING
+   MEDIC
+   BANDCARE
+   EXITCREW
+   CHECKIN
+   MOKKAMOK
+   RENOVATION
+   LAEKKERBIXEN
+   BAGER
+   OPVASK
+   KREA
+   OPNEDMAD
+   CHILL
+ }
+
+

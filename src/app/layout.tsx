@@ -36,6 +36,9 @@ export const metadata = {
   creator: manifest.creator,
   author: manifest.author,
   formatDetection: manifest.formatDetection,
+  display: manifest.display,
+  displayOverride: manifest.display_override,
+  visualViewport: manifest.viewport,
 };
 
 export default function RootLayout({

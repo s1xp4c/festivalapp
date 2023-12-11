@@ -3,8 +3,11 @@
   "url": "https://faellestival.lol/",
   "generator": "Next.js",
   "applicationName": "FællesAppen",
+  "display_override": ["fullscreen", "minimal-ui"],
+  "display": "standalone",
+  "viewport": "width=device-width, initial-scale=1.0",
   "keywords": [
-    "Festival, Frivillig, Kærlighed, Hyggefest, Fælleskab, Fællestival, Fest, Friluftsliv, Musik, Events, Fyn, Sydfyn, Stenstrup, Svendborg, Forening, Foreningsliv, Almennyttig, Vækstlaget, Odense, Ringe, Rudme, Kværndrup"
+    "Festival, Frivillig, Kærlighed, Hyggefest, Fælleskab, Fællestival, Fest, Friluftsliv, Musik, Events, Fyn, Sydfyn, Stenstrup, Svendborg, Forening, Foreningsliv, Almennyttig, Vækstlaget, Odense, Ringe, Rudme, Kværndrup, festivaler, Festivalforening, musikevent, billig ferie, ferie, uge 29"
   ],
   "author": {
     "name": "Morten Bo Sixhøj",
