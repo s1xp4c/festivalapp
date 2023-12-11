@@ -9,7 +9,14 @@
   "viewport": "width=device-width, initial-scale=1.0",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
-  "orientation": "portrait",
+  "alternates": {
+    "canonical": "./",
+    "languages": {
+      "da-DK": "/da-DK",
+      "de-DE": "/de-DE",
+      "en-US": "/en-US"
+    }
+  },
   "icons": [
     {
       "src": "/favicons/icon5.png",

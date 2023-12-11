@@ -21,28 +21,28 @@ export const metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.fallestival.lol"
   ),
-  alternates: {
-    canonical: "./",
-    languages: {
-      "da-DK": "/da-DK",
-      "de-DE": "/de-DE",
-      "en-US": "/en-US",
-    },
-  },
-  openGraph: manifest.openGraph,
-  title: manifest.title,
-  generator: manifest.generator,
-  applicationName: manifest.applicationName,
-  keywords: manifest.keywords,
-  description: manifest.description,
-  creator: manifest.creator,
-  author: manifest.author,
-  formatDetection: manifest.formatDetection,
-  display: manifest.display,
-  displayOverride: manifest.display_override,
-  visualViewport: manifest.viewport,
-  ScreenOrientation: manifest.orientation,
-  // manifest: manifest,
+  // alternates: {
+  //   canonical: "./",
+  //   languages: {
+  //     "da-DK": "/da-DK",
+  //     "de-DE": "/de-DE",
+  //     "en-US": "/en-US",
+  //   },
+  // },
+  // openGraph: manifest.openGraph,
+  // title: manifest.title,
+  // generator: manifest.generator,
+  // applicationName: manifest.applicationName,
+  // keywords: manifest.keywords,
+  // description: manifest.description,
+  // creator: manifest.creator,
+  // author: manifest.author,
+  // formatDetection: manifest.formatDetection,
+  // display: manifest.display,
+  // displayOverride: manifest.display_override,
+  // visualViewport: manifest.viewport,
+  // ScreenOrientation: manifest.orientation,
+  manifest: manifest,
 };
 
 export default function RootLayout({
