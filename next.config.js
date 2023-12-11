@@ -18,4 +18,7 @@ const withPWA = require("next-pwa")({
 module.exports = withPWA({
   reactStrictMode: true,
   swcMinify: false,
+  experimental: {
+    webpackBuildWorker: true,
+  },
 });
