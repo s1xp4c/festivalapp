@@ -1,5 +1,5 @@
 // non-relatives
-
+import type { Metadata, Viewport } from "next";
 import { Rubik } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -16,18 +16,59 @@ export const rubik = Rubik({
   display: "swap",
 });
 
-export const metadata = {
-  title: "Fællestival",
-  url: "/",
-  start_url: "/",
-  short_name: "Fællestival",
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  colorScheme: "dark",
+};
+
+export const metadata: Metadata = {
+  title: {
+    template: "%s | Fællestival",
+    default: "Fællestival",
+  },
   generator: "Next.js",
   applicationName: "FællesAppen",
-  display_override: ["fullscreen", "minimal-ui"],
-  display: "standalone",
-  viewportExport: "width=device-width, initial-scale=1.0",
-  background_color: "#FFFFFF",
-  theme_color: "#FFFFFF",
+  referrer: "origin-when-cross-origin",
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon/icon1.png" },
+      new URL("/favicon/icon1.png", "https://fallestival.lol"),
+    ],
+    shortcut: ["/favicon/icon1.png"],
+    apple: [
+      { url: "/favicon/icon2.png" },
+      { url: "/favicon/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "192x192",
+        url: "/favicon/icon3.png",
+      },
+      {
+        rel: "256x256",
+        url: "/favicon/icon4.png",
+      },
+    ],
+  },
   alternates: {
     canonical: "/",
     languages: {
@@ -39,17 +80,9 @@ export const metadata = {
   keywords: [
     "Festival, Frivillig, Kærlighed, Hyggefest, Fælleskab, Fællestival, Fest, Friluftsliv, Musik, Events, Fyn, Sydfyn, Stenstrup, Svendborg, Forening, Foreningsliv, Almennyttig, Vækstlaget, Odense, Ringe, Rudme, Kværndrup, festivaler, Festivalforening, musikevent, billig ferie, ferie, uge 29",
   ],
-  author: {
-    name: "Morten Bo Sixhøj",
-    url: "https://block-folio.netlify.app/",
-  },
   creator: "Morten Six",
   description:
     "Fællestival appen er en Open Source Festival App udviklet til Fællaz (Fællestival medlemmer) for at gøre det nemmere og sjovere at være på festival og arbejde i foreningsteams og grupper sammen. \n\nEn App fuld af vigtig info, hvor brugerne interaktivt kan influere både på indholdet af Appen, men oxo foreningen og festivalen.",
-  related_applications: {
-    platform: "None",
-    url: "https://play.google.com/store/apps/",
-  },
   openGraph: {
     title: "Fællestival",
     description:
@@ -57,22 +90,13 @@ export const metadata = {
     url: "https://faellestival.lol/",
     siteName: "Fællestival",
     images: ["|/hero/1.jpg"],
-    size: "1024x675",
-    alt: "Fællestival Scenen med gæster under avikling",
-    contentType: "image",
     type: "website",
   },
   twitter: {
     title: "Fællestival",
     description:
       "Fællestival appen er en Open Source Festival App udviklet til Fællaz",
-    url: "https://faellestival.lol/",
-    siteName: "Fællestival",
     images: ["|/hero/1.jpg"],
-    size: "1024x675",
-    alt: "Fællestival Scenen med gæster under avikling",
-    contentType: "image",
-    type: "website",
   },
   formatDetection: {
     email: true,
