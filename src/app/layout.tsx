@@ -1,5 +1,4 @@
 // non-relatives
-// import type { Metadata, Viewport } from "next";
 import { Rubik } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -10,22 +9,23 @@ import ThemeProvider from ":/components/providers/ThemeProvider";
 import { DesktopNav } from ":/components/navigation/desktopNav/DesktopNav";
 import FooterMenu from ":/components/footer/footerMenu/FooterMenu";
 import MaxWidthWrapper from ":/components/ui/MaxWidthWrapper";
+import { Viewport } from "next";
 
 export const rubik = Rubik({
   subsets: ["latin"],
   display: "swap",
 });
 
-// export const viewport: Viewport = {
-//   themeColor: [
-//     { media: "(prefers-color-scheme: light)", color: "white" },
-//     { media: "(prefers-color-scheme: dark)", color: "black" },
-//   ],
-//   width: "device-width",
-//   initialScale: 1,
-//   maximumScale: 1,
-//   colorScheme: "dark",
-// };
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  colorScheme: "dark",
+};
 
 // export const metadata: Metadata = {
 //   title: {

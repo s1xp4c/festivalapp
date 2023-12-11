@@ -1,10 +1,9 @@
 {
+  "id": "FællApp",
   "name": "Fællestival",
   "start_url": "https://faellestival.lol/",
   "short_name": "Fællestival",
-  "generator": "Next.js",
   "application_name": "FællesAppen",
-  "display_override": ["fullscreen", "minimal-ui"],
   "display": "standalone",
   "viewport": "width=device-width, initial-scale=1.0",
   "background_color": "#FFFFFF",
