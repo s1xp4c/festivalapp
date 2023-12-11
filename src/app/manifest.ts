@@ -45,6 +45,11 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: "512x512",
         type: "image/svg",
       },
+      {
+        src: "/icon7.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
     ],
     description:
       "Fællestival appen er en Open Source Festival App udviklet til Fællaz (Fællestival medlemmer) for at gøre det nemmere og sjovere at være på festival og arbejde i foreningsteams og grupper sammen. \n\nEn App fuld af vigtig info, hvor brugerne interaktivt kan influere både på indholdet af Appen, men oxo foreningen og festivalen.",
