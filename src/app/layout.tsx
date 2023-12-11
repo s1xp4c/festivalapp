@@ -9,7 +9,6 @@ import { cn } from ":/lib/utils";
 import ThemeProvider from ":/components/providers/ThemeProvider";
 import { DesktopNav } from ":/components/navigation/desktopNav/DesktopNav";
 import FooterMenu from ":/components/footer/footerMenu/FooterMenu";
-// import manifest from ":/constants/manifest.json";
 import MaxWidthWrapper from ":/components/ui/MaxWidthWrapper";
 
 export const rubik = Rubik({
@@ -37,43 +36,43 @@ export const metadata = {
       "en-US": "/en-US",
     },
   },
-  // icons: [
-  //   {
-  //     src: "|/favicons/icon1.png",
-  //     sizes: {16:16},
-  //     type: "image/png",
-  //   },
-  //   {
-  //     src: "|/favicons/icon2.png",
-  //     sizes: "32x32",
-  //     type: "image/png",
-  //   },
-  //   {
-  //     src: "|/favicons/icon3.png",
-  //     sizes: "192x192",
-  //     type: "image/png",
-  //   },
-  //   {
-  //     src: "|/favicons/icon4.png",
-  //     sizes: "256x256",
-  //     type: "image/png",
-  //   },
-  //   {
-  //     src: "|/favicons/icon5.png",
-  //     sizes: "270x270",
-  //     type: "image/png",
-  //   },
-  //   {
-  //     src: "|/favicons/apple-icon.png",
-  //     sizes: "180x180",
-  //     type: "image/png",
-  //   },
-  //   {
-  //     src: "|/favicons/icon6.svg",
-  //     sizes: "512x512",
-  //     type: "image/svg",
-  //   },
-  // ],
+  icons: [
+    {
+      src: "|/favicons/icon1.png",
+      sizes: "16x16",
+      type: "image/png",
+    },
+    {
+      src: "|/favicons/icon2.png",
+      sizes: "32x32",
+      type: "image/png",
+    },
+    {
+      src: "|/favicons/icon3.png",
+      sizes: "192x192",
+      type: "image/png",
+    },
+    {
+      src: "|/favicons/icon4.png",
+      sizes: "256x256",
+      type: "image/png",
+    },
+    {
+      src: "|/favicons/icon5.png",
+      sizes: "270x270",
+      type: "image/png",
+    },
+    {
+      src: "|/favicons/apple-icon.png",
+      sizes: "180x180",
+      type: "image/png",
+    },
+    {
+      src: "|/favicons/icon6.svg",
+      sizes: "512x512",
+      type: "image/svg",
+    },
+  ],
   keywords: [
     "Festival, Frivillig, Kærlighed, Hyggefest, Fælleskab, Fællestival, Fest, Friluftsliv, Musik, Events, Fyn, Sydfyn, Stenstrup, Svendborg, Forening, Foreningsliv, Almennyttig, Vækstlaget, Odense, Ringe, Rudme, Kværndrup, festivaler, Festivalforening, musikevent, billig ferie, ferie, uge 29",
   ],
@@ -120,28 +119,6 @@ export const metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.fallestival.lol"
   ),
-  // alternates: {
-  //   canonical: "./",
-  //   languages: {
-  //     "da-DK": "/da-DK",
-  //     "de-DE": "/de-DE",
-  //     "en-US": "/en-US",
-  //   },
-  // },
-  // openGraph: manifest.openGraph,
-  // title: manifest.title,
-  // generator: manifest.generator,
-  // applicationName: manifest.applicationName,
-  // keywords: manifest.keywords,
-  // description: manifest.description,
-  // creator: manifest.creator,
-  // author: manifest.author,
-  // formatDetection: manifest.formatDetection,
-  // display: manifest.display,
-  // displayOverride: manifest.display_override,
-  // visualViewport: manifest.viewport,
-  // ScreenOrientation: manifest.orientation,
-  // manifest: manifest,
 };
 
 export default function RootLayout({
