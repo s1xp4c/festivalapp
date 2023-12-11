@@ -18,9 +18,11 @@ export const rubik = Rubik({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://faellestival.lol"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.fallestival.lol"
+  ),
   alternates: {
-    canonical: "/",
+    canonical: "./",
     languages: {
       "da-DK": "/da-DK",
       "de-DE": "/de-DE",
@@ -39,6 +41,8 @@ export const metadata = {
   display: manifest.display,
   displayOverride: manifest.display_override,
   visualViewport: manifest.viewport,
+  ScreenOrientation: manifest.orientation,
+  // manifest: manifest,
 };
 
 export default function RootLayout({

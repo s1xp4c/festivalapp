@@ -1,11 +1,27 @@
 {
   "title": "Fællestival",
-  "url": "https://faellestival.lol/",
+  "url": "./",
+  "start_url": "./",
   "generator": "Next.js",
   "applicationName": "FællesAppen",
   "display_override": ["fullscreen", "minimal-ui"],
   "display": "standalone",
   "viewport": "width=device-width, initial-scale=1.0",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicons/icon5.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/icon6.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
   "keywords": [
     "Festival, Frivillig, Kærlighed, Hyggefest, Fælleskab, Fællestival, Fest, Friluftsliv, Musik, Events, Fyn, Sydfyn, Stenstrup, Svendborg, Forening, Foreningsliv, Almennyttig, Vækstlaget, Odense, Ringe, Rudme, Kværndrup, festivaler, Festivalforening, musikevent, billig ferie, ferie, uge 29"
   ],
