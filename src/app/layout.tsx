@@ -103,9 +103,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: true,
   },
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.fallestival.lol"
-  ),
+  // metadataBase: new URL(
+  //   process.env.NEXT_PUBLIC_SITE_URL || "https://www.fallestival.lol"
+  // ),
 };
 
 export default function RootLayout({

@@ -58,15 +58,11 @@
     "Festival, Frivillig, Kærlighed, Hyggefest, Fælleskab, Fællestival, Fest, Friluftsliv, Musik, Events, Fyn, Sydfyn, Stenstrup, Svendborg, Forening, Foreningsliv, Almennyttig, Vækstlaget, Odense, Ringe, Rudme, Kværndrup, festivaler, Festivalforening, musikevent, billig ferie, ferie, uge 29"
   ],
   "author": {
-    "name": "Morten Bo Sixhøj",
+    "name": "Morten Six",
     "url": "https://block-folio.netlify.app/"
   },
   "creator": "Morten Six",
   "description": "Fællestival appen er en Open Source Festival App udviklet til Fællaz (Fællestival medlemmer) for at gøre det nemmere og sjovere at være på festival og arbejde i foreningsteams og grupper sammen. \n\nEn App fuld af vigtig info, hvor brugerne interaktivt kan influere både på indholdet af Appen, men oxo foreningen og festivalen.",
-  "related_applications": {
-    "platform": "None",
-    "url": "https://play.google.com/store/apps/"
-  },
   "open_graph": {
     "title": "Fællestival",
     "description": "Fællestival appen er en Open Source Festival App udviklet til Fællaz",
