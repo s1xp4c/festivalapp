@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: "Fællestival",
     display_override: ["fullscreen", "minimal-ui"],
     display: "standalone",
-    background_color: "#FFFFFF",
-    theme_color: "#FFFFFF",
+    background_color: "#1e1b4b",
+    theme_color: "#4c1d95",
     icons: [
       {
         src: "/icon1.png",

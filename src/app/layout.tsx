@@ -1,6 +1,7 @@
 // non-relatives
 import { Rubik } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { Viewport } from "next";
 
 // relatives
 import ":/styles/globals.css";
@@ -9,7 +10,7 @@ import ThemeProvider from ":/components/providers/ThemeProvider";
 import { DesktopNav } from ":/components/navigation/desktopNav/DesktopNav";
 import FooterMenu from ":/components/footer/footerMenu/FooterMenu";
 import MaxWidthWrapper from ":/components/ui/MaxWidthWrapper";
-import { Viewport } from "next";
+import MobileNav from ":/components/navigation/mobileNav/MobileNav";
 
 export const rubik = Rubik({
   subsets: ["latin"],
@@ -122,8 +123,16 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <DesktopNav />
-          <MaxWidthWrapper className="mt-24 mb-auto min-w-full">
+          {/* Desktop Navigation */}
+          <div className="hidden sm:block">
+            <DesktopNav />
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="block sm:hidden">
+            <MobileNav />
+          </div>
+          <MaxWidthWrapper className="mt-1 mb-auto min-w-full">
             {children}
             <Analytics />
           </MaxWidthWrapper>
