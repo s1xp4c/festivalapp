@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fællestival",
     description:
-      "Fællestival appen er en Open Source Festival App udviklet til Fællaz",
+      "Fællestival er en fynsk frivillig festivalforening beliggende lidt udenfor Stenstrup, Svendborg på Sydfyn. Den årlige festival ligger altid i uge 29, og billetter og medlemskab kan købes i App'en hvor medlemmer yderligere kan benytte sig af Appens features for en lækrere festivaloplevelse.",
     url: "https://faellestival.lol/",
     siteName: "Fællestival",
     images: ["|/hero/1.jpg"],
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Fællestival",
     description:
-      "Fællestival appen er en Open Source Festival App udviklet til Fællaz",
+      "Fællestival er en fynsk frivillig festivalforening beliggende lidt udenfor Stenstrup, Svendborg på Sydfyn. Den årlige festival ligger altid i uge 29, og billetter og medlemskab kan købes i App'en hvor medlemmer yderligere kan benytte sig af Appens features for en lækrere festivaloplevelse.",
     images: ["|/hero/1.jpg"],
   },
   formatDetection: {
